@@ -73,8 +73,8 @@ $('input[name=BB]').bind(' keyup change',function(){
 	//donothing
 	}
 	
-	 A = parseFloat($("input:text[name='AA']").val(),10);
 	 B = parseFloat($("input:text[name='BB']").val(),10);
+	 A = parseFloat($("input:text[name='AA']").val(),10);
 	 C = parseFloat($("input:text[name='CC']").val(),10);
 	
 	if(dataA == '3' ){
@@ -97,9 +97,9 @@ $('input[name=CC]').bind(' keyup change',function(){
 	//count++;
 
 	
+	 dataC = $(":text[name='CC']").attr('data-x');
 	 dataA = $(":text[name='AA']").attr('data-x');
 	 dataB = $(":text[name='BB']").attr('data-x');
-	 dataC = $(":text[name='CC']").attr('data-x');
 	
 	
 	if (dataC == '3' || dataC == '2'){
@@ -114,14 +114,14 @@ $('input[name=CC]').bind(' keyup change',function(){
 				$(":text[name='AA']").attr('data-x','3');
 			
 	}
-	else if (dataCC == '1')
+	else if (dataC == '1')
 	{
 	//donothing
 	}
 	
+	 C = parseFloat($("input:text[name='CC']").val(),10);
 	 A = parseFloat($("input:text[name='AA']").val(),10);
 	 B = parseFloat($("input:text[name='BB']").val(),10);
-	 C = parseFloat($("input:text[name='CC']").val(),10);
 	
 	if(dataB == '3' ){
 		B = (C - A);
