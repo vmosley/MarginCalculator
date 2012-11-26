@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script language="JavaScript"></script>
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
+  </head>
+  <body>
+    <!-- ==================================PAGE ONE=================================-->
+  <div  data-role="page" id="two" data-theme="b" data-url="two">
+    <fieldset>
+      <legend>Parameters:</legend>
+      <p>
+      <span>Bill Rate:</span> 
+      <input type="text" name="billRate" style="text-align: right;" data-x="1" /></p>
+      <p>
+      <span>Pay Rate:</span> 
+      <input type="text" name="payRate" style="text-align: right;" data-x="2" /></p>
+      <p>
+      <span>Mark Up:</span> 
+      <input id="CC" type="text" name="markUp" style="text-align: right;" data-x="3" /></p>
+      <p>
+      <span>Gross Profit Margin:</span> 
+      <input id="CC" type="text" name="grossProfitMArgin" style="text-align: right;" data-x="3" /></p>
+      <p>
+      <span>Gross Margin %:</span> 
+      <input id="CC" type="text" name="grossMArginPercent" style="text-align: right;" data-x="3" /></p>
+    </fieldset>
+  </div>
+  
+  <!-- ==================================SETTINGS & CHECK RATE=================================-->
+  <div class="right">
+  <p>
+    <a href="#two" data-role="button" data-theme="a" onclick="calculate1();"
+    class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-a">
+      <span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true">
+        <span class="ui-btn-text">Settings</span>
+      </span>
+    </a>
+  </p>
+  <div data-theme="a" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-a" aria-disabled="false">
+    <span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true">
+      <span class="ui-btn-text">Check Rate</span>
+    </span>
+    <input type="button" value="Check Rate" data-theme="a" onclick="calculate1();calculate();checkBValue()" class="ui-btn-hidden"
+    aria-disabled="false" />
+  </div>
+  </div>
+  <!-- ==================================PAGE TWO=================================-->
+  <div data-role="page" id="two" data-theme="b" data-url="two">
+    <div data-role="content" data-theme="b">
+      
+      <p>
+        <a href="#one" data-direction="reverse" data-role="button" onclick="calculate();" data-theme="b">Home</a>
+      </p>
+    </div>
+  </div>
+  <div class="ui-loader ui-body-a ui-corner-all" style="top: 321.5px;">
+    <h1>loading</h1>
+  </div>
+  <script type="text/javascript" src="js/lastTwoLogic.js"></script> 
+  <script type="text/javascript" src="js/jquery.js"></script></body>
+</html>

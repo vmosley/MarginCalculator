@@ -1,13 +1,10 @@
-
-
 //=================================================================AA===========================
 $('input[name=AA]').bind(' keyup change',function(){
 	
 	//var count = 0;
 	//count++;
 
-	//$("input[name=AA]").addClass("selected");
-
+	
 	 dataA = $(":text[name='AA']").attr('data-x');
 	 dataB = $(":text[name='BB']").attr('data-x');
 	 dataC = $(":text[name='CC']").attr('data-x');
@@ -27,8 +24,7 @@ $('input[name=AA]').bind(' keyup change',function(){
 	}
 	else if (dataA == '1')
 	{
-	//Reset Input Color
-	$(':input[name="AA"]').css({color:"black"});
+	//donothing
 	}
 	
 	 A = parseFloat($("input:text[name='AA']").val(),10);
@@ -39,22 +35,12 @@ $('input[name=AA]').bind(' keyup change',function(){
 		B = (C - A);
     	//Display in field
 		$(':input[name="BB"]').val(B.toString());
-		//Change Style
-		$(':input[name="BB"]').css({color:"red"});
-		}
-		else //Change Style for Inputs
-		$(':input[name="BB"]').css({color:"black"});
-		
-	
+	}
 	if(dataC == '3' ){
 		C = (A + B);
     	//Display in field
 		$(':input[name="CC"]').val(C.toString());
-		//Change Style for Outputs
-		$(':input[name="CC"]').css({color:"red"});
-	}
-	else //Change Style for Inputs
-		$(':input[name="CC"]').css({color:"black"});
+	}	
 
 });	
 
@@ -84,8 +70,7 @@ $('input[name=BB]').bind(' keyup change',function(){
 	}
 	else if (dataB == '1')
 	{
-	//Reset Input Color
-	$(':input[name="BB"]').css({color:"black"});
+	//donothing
 	}
 	
 	 B = parseFloat($("input:text[name='BB']").val(),10);
@@ -96,21 +81,12 @@ $('input[name=BB]').bind(' keyup change',function(){
 		A = (C - B);
     	//Display in field
 		$(':input[name="AA"]').val(A.toString());
-		//Change Style
-		$(':input[name="AA"]').css({color:"red"});
 	}
-	else
-		$(':input[name="AA"]').css({color:"black"});
-		
 	if(dataC == '3' ){
 		C = (A + B);
     	//Display in field
 		$(':input[name="CC"]').val(C.toString());
-		//Change Style for Outputs
-		$(':input[name="CC"]').css({color:"red"});
-	}
-	else //Change Style for Inputs
-		$(':input[name="CC"]').css({color:"black"});
+	}	
 
 });	
 
@@ -140,8 +116,7 @@ $('input[name=CC]').bind(' keyup change',function(){
 	}
 	else if (dataC == '1')
 	{
-	//Reset Input Color
-	$(':input[name="CC"]').css({color:"black"});
+	//donothing
 	}
 	
 	 C = parseFloat($("input:text[name='CC']").val(),10);
@@ -152,25 +127,11 @@ $('input[name=CC]').bind(' keyup change',function(){
 		B = (C - A);
     	//Display in field
 		$(':input[name="BB"]').val(B.toString());
-		//Change Style for Outputs
-		$(':input[name="BB"]').css({color:"red"});
 	}
-	else //Change Style for Inputs
-		$(':input[name="BB"]').css({color:"black"});
-		
 	if(dataA == '3' ){
 		A = (C - B);
     	//Display in field
 		$(':input[name="AA"]').val(A.toString());
-		//Change Style for Outputs
-		$(':input[name="AA"]').css({color:"red"});
-	}
-	else //Change Style for Inputs
-		$(':input[name="AA"]').css({color:"black"});
-	
+	}	
 
 });	
-
-$(':text').bind('swipeleft', function(event){
-//animate and reset
-});
