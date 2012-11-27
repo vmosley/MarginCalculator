@@ -1,4 +1,7 @@
-
+ $(':text').bind('swipeleft', function(event){
+ $(this).val('');
+ $(":text[data-x='3']").each(function() { $(":text[data-x='3']").val('');} );
+ });
 //=================================================================AA===========================
 $('input[name=AA]').bind(' keyup change',function(){
 	
