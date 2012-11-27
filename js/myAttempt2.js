@@ -1,4 +1,11 @@
  $(':text').bind('swipeleft', function(event){
+ $(":text[data-x='3']").animate({
+    opacity: 0.25,
+    left: '+=50',
+    height: 'toggle'
+  }, 5000, function() {
+    // Animation complete.
+  });
  $(this).val('');
  $(":text[data-x='3']").each(function() { $(":text[data-x='3']").val('');} );
  });
