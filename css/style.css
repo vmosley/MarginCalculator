@@ -1,27 +1,31 @@
 .Box
 {
-  background-position:11px 5px; 
-  background-repeat:no-repeat; 
-  text-align:right;
-  padding-left:17px;
-  padding-right:117px;
+	
+	background-position:11px 5px; 
+	background-repeat:no-repeat; 
+	text-align:right;
+	padding-left:17px;
+	padding-right:117px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 label
 {
-display:none;
+	display:none;
 }
 #AA
 {
-  background-image:url(../images/billRate.png); 
-
+	background-image:url(../images/billRate.png); 
 }
 #BB
 {
   background-image:url(../images/payRate.png); 
-
 }
 #CC
 {
   background-image:url(../images/markUpPercent.png); 
-
 }

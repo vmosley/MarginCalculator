@@ -1,14 +1,18 @@
- $(':text').bind('swipeleft', function(event){
- $(":text[data-x='3']").animate({
-    opacity: 0.25,
-    left: '+=50',
-    height: 'toggle'
-  }, 5000, function() {
-    // Animation complete.
-  });
- $(this).val('');
- $(":text[data-x='3']").each(function() { $(":text[data-x='3']").val('');} );
- });
+ //[type=text] can replace :text
+//$(":text[data-x='3']").each(function() { do something } );    //just for reference
+	//when padding is 100 clear and reset padding
+
+$('[type=text]').bind('swipeleft',function(){
+	$(':text[data-x="3"]').stop().animate({'padding-right':800},'slow');
+	$(this).stop().animate({'padding-right':800},'slow',function(){
+		$(this).css({'padding-right':0});
+		$(':text[data-x="3"]').css({'padding-right':0});
+		
+		$(this).val('');
+		$(':text[data-x="3"]').val('');
+	});
+});
+
 //=================================================================AA===========================
 $('input[name=AA]').bind(' keyup change',function(){
 	
