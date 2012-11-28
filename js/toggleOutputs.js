@@ -190,19 +190,24 @@ $('input[name=billRate]').bind(' keyup change',function(){
 	//var count = 0;
 	//count++;
 
-	
-	 dataC = $("[type=tel][name='CC']").attr('data-x');
+	//Get type of output/input, 1,2 or 3 (testing values)
 	 dataA = $("[type=tel][name='AA']").attr('data-x');
 	 dataB = $("[type=tel][name='BB']").attr('data-x');
-	 dataB = $(this).attr('data-x');
+	 dataCC = $("[type=tel][name='CC']").attr('data-x');
+	
+	//Get type of output/input, 1,2 or 3 (real)
+	 dataBillRate = $(this).attr('data-x');
 	 dataPayRate = $("[type=tel][name='payRate']").attr('data-x');
 	 dataMarkUp = $("[type=tel][name='markUp']").attr('data-x');
 	 dataGrossProfitMargin = $("[type=tel][name='grossProfitMargin']").attr('data-x');
 	 dataGrossMarginPercent = $("[type=tel][name='grossMarginPercent']").attr('data-x');
 	
-	
-	if (dataC == '3' || dataC == '2'){
+	//if not input-1 set to input-1
+	if (dataBillRate == '3' || dataBillRate == '2'){
 		$(this).attr('data-x','1');
+		//check rest, if input 1 set as input 2, if input 2 set as 3, all 3s are outputs
+		//may add ctr later to count up to two ( change to 1 and change to 2 ) and change rest 
+		//to outputs(3)
 		if(dataB == '1' )
 			$("[type=tel][name='BB']").attr('data-x','2');
 			else if(dataB == '2')
@@ -213,24 +218,34 @@ $('input[name=billRate]').bind(' keyup change',function(){
 				$("[type=tel][name='AA']").attr('data-x','3');
 			
 	}
-	else if (dataC == '1')
+	else if (dataBillRate == '1') 
+	//reset color (redundant)-> color should change only when not already that color
 	{
-	//Reset Input Color
+	//Reset Input Color -> probably should do nothing
 	$(this).css({color:"black"});
 	}
 	
-	 C = parseFloat($(this).val(),10);
+	 //grab values from fields (testing values)
 	 A = parseFloat($("[type=tel][name='AA']").val(),10);
 	 B = parseFloat($("[type=tel][name='BB']").val(),10);
 	 B = parseFloat($("[type=tel][name='BB']").val(),10);
-	 B = parseFloat($("[type=tel][name='payRate']").val(),10);
-	 B = parseFloat($("[type=tel][name='markUp']").val(),10);
-	 B = parseFloat($("[type=tel][name='grossProfitMargin']").val(),10);
-	 B = parseFloat($("[type=tel][name='grossMarginPercent']").val(),10);
+	 
+	 //grab values from fields (real)
+	 billRate = parseFloat($(this).val(),10);
+	 payRate = parseFloat($("[type=tel][name='payRate']").val(),10);
+	 markUp = parseFloat($("[type=tel][name='markUp']").val(),10);
+	 grossProfitMargin = parseFloat($("[type=tel][name='grossProfitMargin']").val(),10);
+	 grossMarginPercent = parseFloat($("[type=tel][name='grossMarginPercent']").val(),10);
 	
+	
+	//Calculate all values except for 'this', because it's inputted by user
+	B = (C - A);
+	A = (C - B);
+	
+	//Checks for output(3), displays in field
+	//******Anyway to make this work for each? ****Research .each
 	if(dataB == '3' ){
-		B = (C - A);
-    	//Display in field
+		//Display in field
 		$('[type=tel][name="BB"]').val(B.toString());
 		//Change Style for Outputs
 		$('[type=tel][name="BB"]').css({color:"red"});
@@ -239,8 +254,7 @@ $('input[name=billRate]').bind(' keyup change',function(){
 		$('[type=tel][name="BB"]').css({color:"black"});
 		
 	if(dataA == '3' ){
-		A = (C - B);
-    	//Display in field
+		//Display in field
 		$('[type=tel][name="AA"]').val(A.toString());
 		//Change Style for Outputs
 		$('[type=tel][name="AA"]').css({color:"red"});
