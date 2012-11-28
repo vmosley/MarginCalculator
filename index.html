@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="generator"
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <title>My Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />-->
+    <link rel="stylesheet" href="css/jquerymobile.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script language="JavaScript"></script>
-	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
   </head>
+  
   <body>
-  <div class="left">
+  <div data-role="page" id="PageOne"  data-theme="b"><!--============Start of first page -->
+    <div class="left">
+      <form>
+        <p>
+        <label>AA:</label> 
+        <input class="Box" id="AA" type="text" name="AA" data-x="3" data-theme="b" /></p>
+        <p>
+        <label>BB:</label> 
+        <input class="Box" id="BB" type="text" name="BB" data-x="2" data-theme="b" /></p>
+        <p>
+        <label>CC:</label> 
+        <input class="Box" id="CC" type="text" name="CC" data-x="1" data-theme="b" /></p>
+      </form>
+    </div>
+    <div class="right"></div>
+  </div><!--=============================================== End OF Page 1 -->
   
-    <form>
-		<legend>Parameters:</legend>
-		<p>
-			<label > AA:</label> 
-			<input class="Box" id="AA"  type="text" name="AA"  data-x="3" /></p>
-		<p>
-			<label > BB:</label> 
-			<input class="Box" id="BB" type="text" name="BB"  data-x="2"/></p>
-		<p>	
-			<label> CC:</label> 
-			<input class="Box" id="CC" type="text" name="CC"  data-x="1"/></p>
-			
-	</form>
-  </div>
-  <div class="right">
-  
-  </div>
-  <script src="js/myAttempt2.js"> </script> 
-  <script  src="js/jquery.js"></script>
-  <script src="js/numFormat.js"></script>
+  <div data-role="page" id="PageTwo"><!--============================Start of page two -->
+  </div><!--=============================================== End OF Page 2 -->
+	 
+	<!--=================== JQuery Files-->
+	<script src="js/myAttempt2.js"></script> 
+	<script src="js/jquery.js"></script> 
+	<script src="js/numFormat.js"></script>
+	<!--============ End of JQuery Files-->
   </body>
 </html>
