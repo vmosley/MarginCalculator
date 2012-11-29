@@ -2,49 +2,95 @@
 <html>
   <head>
     <title>My Page</title>
-    
-	<!-- =====Meta ========-->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- =====Meta ========-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="generator"
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	<!--=====STYLE======-->
-	<!-- ******Find out how to include jquery themes-->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--=====STYLE======-->
+    <!-- ******Find out how to include jquery themes-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
     <!--<link rel="stylesheet" href="themes/eggplant/jquery.ui.theme.css" />
     <link rel="stylesheet" href="themes/eggplant/jquery-ui.css" />-->
     <link rel="stylesheet" href="css/style2.css" />
-	
-	<!--JQuery =====-->
+    <!--JQuery =====-->
     <!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
   </head>
-  
-  <body> 
-  <div data-theme="b" data-role="page" id="PageOne" >
+  <body>
+  <div data-theme="b" data-role="page" id="PageOne">
     <!--============Start of first page -->
     <div class="left">
       <form>
         <p>
         <label>Bill Rate:</label> 
-        <input class="Box" id="billRate" type="tel" name="billRate"   data-x="1"  /></p>
+        <input class="Box" id="billRate" type="tel" name="billRate" data-x="1" /></p>
         <p>
         <label>Pay Rate:</label> 
-        <input class="Box" id="payRate" type="tel" name="payRate"   data-x="2"  /></p>
+        <input class="Box" id="payRate" type="tel" name="payRate" data-x="2" /></p>
         <p>
         <label>Mark Up:</label> 
-        <input class="Box" id="markUp"  type="tel" name="markUp"   data-x="3"  /></p>
+        <input class="Box" id="markUp" type="tel" name="markUp" data-x="3" /></p>
         <p>
         <label>Gross Profit Margin:</label> 
-        <input class="Box" id="grossProfitMargin" type="tel" name="grossProfitMargin" data-x="3"/></p>
+        <input class="Box" id="grossProfitMargin" type="tel" name="grossProfitMargin" data-x="3" /></p>
         <p>
         <label>Gross Margin %:</label> 
-        <input class="Box" id="grossMarginPercent" id="CC" type="tel" name="grossMarginPercent" data-x="3"  /></p>
+        <input class="Box" id="CC" type="tel" name="grossMarginPercent" data-x="3" /></p>
       </form>
     </div>
-    <div class="right"></div>
+   <!-- <div class="right"></div>-->
+    <div class="ui-grid-c">
+      <div class="ui-block-a">
+        <button data-theme="b" id="key7" data-rockncoder-tag="7">7</button>
+      </div>
+      <div class="ui-block-b">
+        <button data-theme="b" id="key8" data-rockncoder-tag="8">8</button>
+      </div>
+      <div class="ui-block-c">
+        <button data-theme="b" id="key9" data-rockncoder-tag="9">9</button>
+      </div>
+      <div class="ui-block-d">
+        <button data-theme="e" id="keyDivide">/</button>
+      </div>
+      <div class="ui-block-a">
+        <button data-theme="b" id="key4" data-rockncoder-tag="4">4</button>
+      </div>
+      <div class="ui-block-b">
+        <button data-theme="b" id="key5" data-rockncoder-tag="5">5</button>
+      </div>
+      <div class="ui-block-c">
+        <button data-theme="b" id="key6" data-rockncoder-tag="6">6</button>
+      </div>
+      <div class="ui-block-d">
+        <button data-theme="e" id="keyMultiply">*</button>
+      </div>
+      <div class="ui-block-a">
+        <button data-theme="b" id="key1" data-rockncoder-tag="1">1</button>
+      </div>
+      <div class="ui-block-b">
+        <button data-theme="b" id="key2" data-rockncoder-tag="2">2</button>
+      </div>
+      <div class="ui-block-c">
+        <button data-theme="b" id="key3" data-rockncoder-tag="3">3</button>
+      </div>
+      <div class="ui-block-d">
+        <button data-theme="e" id="keySubtract">-</button>
+      </div>
+      <div class="ui-block-a">
+        <button data-theme="e" id="keyDecimalPoint" data-rockncoder-tag=".">.</button>
+      </div>
+      <div class="ui-block-b">
+        <button data-theme="b" id="key0" data-rockncoder-tag="0">0</button>
+      </div>
+      <div class="ui-block-c">
+        <button data-theme="e" id="keyEquals">=</button>
+      </div>
+      <div class="ui-block-d">
+        <button data-theme="e" id="keyAdd">+</button>
+      </div>
+    </div>
   </div>
   <!--=============================================== End OF Page 1 -->
   <div data-role="page" id="PageTwo">
@@ -55,5 +101,6 @@
   <script src="js/toggleOutputs.js"></script> 
   <script src="js/jquery.js"></script> 
   <script src="js/numFormat.js"></script> 
+  <script src="js/RockCalcApp.js.js"></script>
   <!--============ End of JQuery Files--></body>
 </html>

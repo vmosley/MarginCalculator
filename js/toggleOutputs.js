@@ -6,8 +6,8 @@
 	
 /* Clear swiped Input plus all calculated Inputs */
 $('[type=tel]').bind('swipeleft',function(){
-	$('[type=tel][data-x="3"]').stop().animate({'padding-right':800},'slow');
-	$(this).stop().animate({'padding-right':800},'slow',function(){
+	$('[type=tel][data-x="3"]').stop().animate({'padding-right':700},'slow');
+	$(this).stop().animate({'padding-right':700},'slow',function(){
 		$(this).css({'padding-right':10});
 		$('[type=tel][data-x="3"]').css({'padding-right':10});
 		
@@ -18,18 +18,15 @@ $('[type=tel]').bind('swipeleft',function(){
 
 // NEW CODE***************************************************************
 // NEW CODE***************************************************************
-$('[type=tel]').change(function() {
- $(this).css({color:"black"});
- 
-});
 
-$('[type=tel]').bind(' keyup change',function(){
+
+$('[type=tel]').bind(' keydown ',function(){
+		//if(isNaN(C)){} 
 	
+	$(this).css({color:"black"});
+	$('[type=tel][data-x=3]').css({color:"red"});
 	//var count = 0;
 	//count++;
-
-	
-
  	//Get type of output/input, 1,2 or 3 (real)
 	 dataCurrent = $(this).attr('data-x');
 	
@@ -48,19 +45,29 @@ $('[type=tel]').bind(' keyup change',function(){
 	dataMarkUp = $("[type=tel][name='markUp']").attr('data-x');
 	dataGrossProfitMargin = $("[type=tel][name='grossProfitMargin']").attr('data-x');
 	dataGrossMarginPercent = $("[type=tel][name='grossMarginPercent']").attr('data-x');
-	//if(isNaN(C)){alert('A is NaN')} ///I'll Deal with NaN later
 	
-	billRate          	= 23; 
-	payRate           	= 23; 
-	markUp            	= 23; 
+	billRate          	= (markUp + payRate) + 1; 
+	payRate           	= (billRate - markUp) + 1
+	markUp            	= (billRate - payRate) - 1; 
     grossProfitMargin 	= 23;
-	grossMarginPercent	= 23;
+	grossMarginPercent	= (grossProfitMargin / billRate);
 	
 		
-	$('[type=tel][name="billRate"]').val(billRate.toString());
-	$('[type=tel][name="payRate"]').val(payRate.toString());
-	$('[type=tel][name="markUp"]').val(markUp.toString());
-	$('[type=tel][name="grossProfitMargin"]').val(grossProfitMargin.toString());
-	$('[type=tel][name="grossMarginPercent"]').val(grossMarginPercent.toString());
+	$('[type=tel][name="billRate"][data-x=3]').not(this).not('[data-x=2]').val(billRate.toString());
+	$('[type=tel][name="payRate"][data-x=3]').not(this).not('[data-x=2]').val(payRate.toString());
+	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString());
+	$('[type=tel][name="grossProfitMargin"][data-x=3]').not(this).not('[data-x=2]').val(grossProfitMargin.toString());
+	$('[type=tel][name="grossMarginPercent"][data-x=3]').not(this).not('[data-x=2]').val(grossMarginPercent.toString());
 
 });	
+
+function recalc() {
+  jQuery("input[class^=percent]").calc("(invoice - cost)/invoice * 100", {
+    invoice: jQuery("input[class^=invoice]"),
+    cost: jQuery("input[class^=cost]")
+  },
+  function(s) {
+    // return an empty string if s is NaN
+    return !isNaN(s) ? s.toFixed(2) + "%" : "";
+  });
+}
