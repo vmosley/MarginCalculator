@@ -26,9 +26,9 @@ position:absolute;
 }
 .equals
 {
- background-image:url(../images/equals.png) 14px 22px;
+ background-image: ,url(../images/equals.png);
 }
-
+/*  14px 22px */
 /* partial code for horizontal rotation not working yet */
 /* .left{
 float:left;
@@ -55,6 +55,7 @@ label
 	display:none;
 }
 
+
 #AA
 {
 	background-image:url(../images/billRate.png); 
@@ -73,29 +74,36 @@ label
 
 #billRate
 {
+  background-image:url(../images/billRate.png); 
+
+}
+
+#billRate2
+{
   background-image:url(../images/billRate.png), url(../images/equals.png); 
 
 }
 
-#payRate
+
+/* #payRate
 {
-  background-image:url(../images/payRate.png); 
-}
+  background-image:url(../images/payRate.png), url(../images/equals.png);
+} */
 
 #markUp
 {
-  background-image:url(../images/markUpPercent.png); 
+  background-image:url(../images/markUpPercent.png), url(../images/equals.png);
 }
 
 #grossProfitMargin
 {
-  background-image:url(../images/grossProfitMargin.png); 
+  background-image:url(../images/grossProfitMargin.png), url(../images/equals.png);
 
 }
 
 #grossMarginPercent
 {
-  background-image:url(../images/grossMarginPercent.png); 
+  background-image:url(../images/grossMarginPercent.png), url(../images/equals.png);
 }
 
 

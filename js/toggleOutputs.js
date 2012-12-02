@@ -3,7 +3,8 @@
 //$("[type=tel][data-x='3']").each(function() { do something } );    //just for reference
 //when padding is 100 clear and reset padding
 //$("input[name=AA]").addClass("selected");
-
+	
+	
 
 	
 /* Clear swiped Input plus all calculated Inputs */
@@ -27,14 +28,18 @@ $("[type=tel]").focus(function() {
 $("[type=tel]").blur(function() {
 		$(this).removeClass("curFocus");
 	});
+	
+$("[type=tel]").blur(function() {
+		$(this).removeClass("curFocus");
+	});	
+	
 // NEW CODE***************************************************************
 $('[type=tel]').bind(' keydown ',function(){
 		
 	
 	
 	
-	$(this).css({color:"black"});
-	$('[type=tel][data-x=3]').css({color:"red"});
+	
 	//var count = 0;
 	//count++;
 	 
@@ -50,7 +55,42 @@ $('[type=tel]').bind(' keydown ',function(){
 		$('[type=tel][data-x=1]').not(this).attr('data-x','2');
 	}else{/*Add error checking for version 2, with a data-x counter. if != default then reset*/}
 	
+		
+	//code for adding equals background pic for when data=3
+	//var payRatePic= $("[name='payRate']").css('background-image');
 	
+	//$(this).css({color:"black"});
+	
+	$('[type=tel][data-x="3"]').css({color:"red"});
+	$('[type=tel]').not("[data-x='3']").css({color:"black"});
+	
+	//Adds Equals when Calculated
+	var nothingPic='url(\"./images/nothing.png\")';
+	var equalsPic= 'url(\"./images/equals.png\")';
+	
+	var billRatePic='url(\"./images/billRate.png\")';
+	var payRatePic='url(\"./images/payRate.png\")';
+	var markUpPic='url(\"./images/markUp.png\")';
+	var grossProfitMarginPic='url(\"./images/grossProfitMargin.png\")';
+	var grossMarginPercentPic='url(\"./images/grossMarginPercent.png\")';
+	
+	$("[type=tel][name='billRate'][data-x='3']").css('background-image', billRatePic + ',' + equalsPic);
+	$("[type=tel][name='billRate']").not("[data-x='3']").css('background-image', billRatePic+','+nothingPic);
+	$("[type=tel][name='payRate'][data-x='3']").css('background-image', payRatePic + ',' + equalsPic);
+	$("[type=tel][name='payRate']").not("[data-x='3']").css('background-image', payRatePic+','+nothingPic);
+	$("[type=tel][name='markUp'][data-x='3']").css('background-image', markUpPic + ',' + equalsPic);
+	$("[type=tel][name='markUp']").not("[data-x='3']").css('background-image', markUpPic+','+nothingPic);
+	$("[type=tel][name='grossProfitMargin'][data-x='3']").css('background-image', grossProfitMarginPic + ',' + equalsPic);
+	$("[type=tel][name='grossProfitMargin']").not("[data-x='3']").css('background-image', grossProfitMarginPic +','+nothingPic);
+	$("[type=tel][name='grossMarginPercent'][data-x='3']").css('background-image', grossMarginPercentPic + ',' + equalsPic);
+	$("[type=tel][name='grossMarginPercent']").not("[data-x='3']").css('background-image', grossMarginPercentPic +','+nothingPic);
+	
+	
+
+	
+	/* console.log('payRatePic: ', payRatePic);
+	console.log('equalsPic: ', equalsPic);
+	 */
 	
 	//Get type of output/input, 1,2 or 3 (real)
 	dataBillRate = $("[type=tel][name='billRate']").attr('data-x');
@@ -65,8 +105,10 @@ $('[type=tel]').bind(' keydown ',function(){
     grossProfitMargin 	= 23;
 	grossMarginPercent	= (grossProfitMargin / billRate);
 	
-	$('[type=tel][data-x=3]').addClass("equals");
-		
+	//$('[type=tel][data-x=3]').addClass("equals"); no longer needed(didnt work)
+	
+	
+	//Sends calculated values to text outputs when data-x=3
 	$('[type=tel][name="billRate"][data-x=3]').not(this).not('[data-x=2]').val(billRate.toString());
 	$('[type=tel][name="payRate"][data-x=3]').not(this).not('[data-x=2]').val(payRate.toString());
 	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString());
