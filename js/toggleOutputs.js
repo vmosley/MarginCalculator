@@ -3,8 +3,23 @@
 //$("[type=tel][data-x='3']").each(function() { do something } );    //just for reference
 //when padding is 100 clear and reset padding
 //$("input[name=AA]").addClass("selected");
+
+
+	var nothingPic='url(\"./images/nothing.png\")';
+	var equalsPic= 'url(\"./images/equals.png\")';
 	
-	
+	var billRatePic='url(\"./images/billRate.png\")';
+	var payRatePic='url(\"./images/payRate.png\")';
+	var markUpPic='url(\"./images/markUpPercent.png\")';
+	var grossProfitMarginPic='url(\"./images/grossProfitMargin.png\")';
+	var grossMarginPercentPic='url(\"./images/grossMarginPercent.png\")';	
+$(document).ready(function() {
+  	$("[name='billRate']").css('background-image', billRatePic +','+ nothingPic);
+	$("[name='payRate']").css('background-image', payRatePic +','+ nothingPic);
+	$("[name='markUp']").css('background-image', markUpPic +','+ nothingPic);
+	$("[name='grossProfitMargin']").css('background-image', grossProfitMarginPic +','+ nothingPic);
+	$("[name='grossMarginPercent']").css('background-image', grossMarginPercentPic +','+ nothingPic);
+});	
 
 	
 /* Clear swiped Input plus all calculated Inputs */
@@ -62,25 +77,22 @@ $('[type=tel]').bind(' keydown ',function(){
 	$('[type=tel]').not("[data-x='3']").css({color:"blue"});
 	
 	//Adds Equals when Calculated
-	var nothingPic='url(\"./images/nothing.png\")';
-	var equalsPic= 'url(\"./images/equals.png\")';
+
 	
-	var billRatePic='url(\"./images/billRate.png\")';
-	var payRatePic='url(\"./images/payRate.png\")';
-	var markUpPic='url(\"./images/markUp.png\")';
-	var grossProfitMarginPic='url(\"./images/grossProfitMargin.png\")';
-	var grossMarginPercentPic='url(\"./images/grossMarginPercent.png\")';
+	$("[name='billRate'][data-x='3']").css('background-image', billRatePic + ',' + equalsPic);
+	$("[name='payRate'][data-x='3']").css('background-image', payRatePic + ',' + equalsPic);
+	$("[name='markUp'][data-x='3']").css('background-image', markUpPic + ',' + equalsPic);
+	$("[name='grossProfitMargin'][data-x='3']").css('background-image', grossProfitMarginPic + ',' + equalsPic);
+	$("[name='grossMarginPercent'][data-x='3']").css('background-image', grossMarginPercentPic + ',' + equalsPic);
 	
-	$("[type=tel][name='billRate'][data-x='3']").css('background-image', billRatePic + ',' + equalsPic);
-	$("[type=tel][name='billRate']").not("[data-x='3']").css('background-image', billRatePic+','+nothingPic);
-	$("[type=tel][name='payRate'][data-x='3']").css('background-image', payRatePic + ',' + equalsPic);
-	$("[type=tel][name='payRate']").not("[data-x='3']").css('background-image', payRatePic+','+nothingPic);
-	$("[type=tel][name='markUp'][data-x='3']").css('background-image', markUpPic + ',' + equalsPic);
-	$("[type=tel][name='markUp']").not("[data-x='3']").css('background-image', markUpPic+','+nothingPic);
-	$("[type=tel][name='grossProfitMargin'][data-x='3']").css('background-image', grossProfitMarginPic + ',' + equalsPic);
-	$("[type=tel][name='grossProfitMargin']").not("[data-x='3']").css('background-image', grossProfitMarginPic +','+nothingPic);
-	$("[type=tel][name='grossMarginPercent'][data-x='3']").css('background-image', grossMarginPercentPic + ',' + equalsPic);
-	$("[type=tel][name='grossMarginPercent']").not("[data-x='3']").css('background-image', grossMarginPercentPic +','+nothingPic);
+	$("[name='billRate']").not("[data-x='3']").css('background-image', billRatePic+','+nothingPic);
+	$("[name='payRate']").not("[data-x='3']").css('background-image', payRatePic+','+nothingPic);
+	$("[name='markUp']").not("[data-x='3']").css('background-image', markUpPic+','+nothingPic);
+	$("[name='grossProfitMargin']").not("[data-x='3']").css('background-image', grossProfitMarginPic +','+nothingPic);
+	$("[name='grossMarginPercent']").not("[data-x='3']").css('background-image', grossMarginPercentPic +','+nothingPic);
+	
+	
+	
 	
 	
 	/* console.log('payRatePic: ', payRatePic);
