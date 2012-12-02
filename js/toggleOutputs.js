@@ -4,7 +4,7 @@
 //when padding is 100 clear and reset padding
 //$("input[name=AA]").addClass("selected");
 
-
+/**************INITAL STYLING******************************/
 	var nothingPic='url(\"./images/nothing.png\")';
 	var equalsPic= 'url(\"./images/equals.png\")';
 	
@@ -59,11 +59,11 @@ $('[type=tel]').bind(' keydown ',function(){
 	
 	if (dataCurrent == '3'){  
 		$(this).attr('data-x','1');
-		$('[type=tel][data-x=2]').not(this).attr('data-x','3');
-		$('[type=tel][data-x=1]').not(this).attr('data-x','2');
+		$('[type=tel][data-x="2"]').not(this).attr('data-x','3');
+		$('[type=tel][data-x="1"]').not(this).attr('data-x','2');
 	}else if (dataCurrent == '2'){
 		$(this).attr('data-x','1');
-		$('[type=tel][data-x=1]').not(this).attr('data-x','2');
+		$('[type=tel][data-x="1"]').not(this).attr('data-x','2');
 	}else{/*Add error checking for version 2, with a data-x counter. if != default then reset*/}
 	
 		
@@ -76,9 +76,8 @@ $('[type=tel]').bind(' keydown ',function(){
 	$('[type=tel][data-x="3"]').css({color:"red"});
 	$('[type=tel]').not("[data-x='3']").css({color:"blue"});
 	
+	//$('[type=tel][data-x=3]').addClass("equals"); no longer needed(didnt work)
 	//Adds Equals when Calculated
-
-	
 	$("[name='billRate'][data-x='3']").css('background-image', billRatePic + ',' + equalsPic);
 	$("[name='payRate'][data-x='3']").css('background-image', payRatePic + ',' + equalsPic);
 	$("[name='markUp'][data-x='3']").css('background-image', markUpPic + ',' + equalsPic);
@@ -99,20 +98,50 @@ $('[type=tel]').bind(' keydown ',function(){
 	console.log('equalsPic: ', equalsPic);
 	 */
 	/*****************************OUTPUT CALCULATIONS**********************************/
-	//Get type of output/input, 1,2 or 3 (real)
+	//Get type of output/input, 1,2 or 3 
 	dataBillRate = $("[type=tel][name='billRate']").attr('data-x');
 	dataPayRate = $("[type=tel][name='payRate']").attr('data-x');
 	dataMarkUp = $("[type=tel][name='markUp']").attr('data-x');
 	dataGrossProfitMargin = $("[type=tel][name='grossProfitMargin']").attr('data-x');
 	dataGrossMarginPercent = $("[type=tel][name='grossMarginPercent']").attr('data-x');
 	
-	billRate          	= (markUp + payRate) + 1; 
-	payRate           	= (billRate - markUp) + 1
-	markUp            	= (billRate - payRate) - 1; 
-    grossProfitMargin 	= 23;
-	grossMarginPercent	= (grossProfitMargin / billRate);
 	
-	//$('[type=tel][data-x=3]').addClass("equals"); no longer needed(didnt work)
+	/* SETTINGS VALUES SHOULD ALWAYS GO FIRST, WILL ALWAYS BE AVAILIBLE*/
+	workersComp			= parseFloat($("[name='workersComp']").val());
+	ficaAndFutaTax      = parseFloat($("[name='ficaAndFutaTax']").val());
+	sui                 = parseFloat($("[name='sui']").val());
+	other               = parseFloat($("[name='other']").val());
+	fundingAndProcessing= parseFloat($("[name='fundingAndProcessing']").val());
+	misc                = parseFloat($("[name='misc']").val());
+	
+	
+	/*DETERMINE WHERE VALUES ARE COMING FROM*/
+	if(false)
+	billRate          	= (markUp + payRate) + 1; 
+	else billRate          	= parseFloat($("[name='billRate']").val()); 
+	
+	if(false)
+	payRate           	= (billRate - markUp) + 1
+	else payRate           	= parseFloat($("[name='payRate']").val());
+	
+	if(true)
+	markUp            	= (billRate - payRate) - 1; 
+	else markUp            	= parseFloat($("[name='markUp']").val()); 
+    
+	if(true)
+	grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+    else grossProfitMargin 	= parseFloat($("[name='grossProfitMargin']").val());
+	
+	if(true)
+	grossMarginPercent	= (grossProfitMargin / billRate);
+	else grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val());
+	
+	/*
+	 A = parseFloat($("input:text[name='AA']").val(),10);  //for refference
+	*/
+	
+
+ 
 	
 	
 	//Sends calculated values to text outputs when data-x=3
