@@ -35,16 +35,12 @@ $("[type=tel]").blur(function() {
 	
 // NEW CODE***************************************************************
 $('[type=tel]').bind(' keydown ',function(){
-		
-	
-	
-	
 	
 	//var count = 0;
 	//count++;
 	 
+ 	/* DETERMINE WHAT TYPE OF INPUT/OUTPUT Get type of output/input, 1,2 or 3 (real)*/
 	dataCurrent = $(this).attr('data-x');
- 	//Get type of output/input, 1,2 or 3 (real)
 	
 	if (dataCurrent == '3'){  
 		$(this).attr('data-x','1');
@@ -61,8 +57,9 @@ $('[type=tel]').bind(' keydown ',function(){
 	
 	//$(this).css({color:"black"});
 	
+	/***********************************OUTPUT STYLING********************************/
 	$('[type=tel][data-x="3"]').css({color:"red"});
-	$('[type=tel]').not("[data-x='3']").css({color:"black"});
+	$('[type=tel]').not("[data-x='3']").css({color:"blue"});
 	
 	//Adds Equals when Calculated
 	var nothingPic='url(\"./images/nothing.png\")';
@@ -86,12 +83,10 @@ $('[type=tel]').bind(' keydown ',function(){
 	$("[type=tel][name='grossMarginPercent']").not("[data-x='3']").css('background-image', grossMarginPercentPic +','+nothingPic);
 	
 	
-
-	
 	/* console.log('payRatePic: ', payRatePic);
 	console.log('equalsPic: ', equalsPic);
 	 */
-	
+	/*****************************OUTPUT CALCULATIONS**********************************/
 	//Get type of output/input, 1,2 or 3 (real)
 	dataBillRate = $("[type=tel][name='billRate']").attr('data-x');
 	dataPayRate = $("[type=tel][name='payRate']").attr('data-x');
@@ -114,8 +109,6 @@ $('[type=tel]').bind(' keydown ',function(){
 	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString());
 	$('[type=tel][name="grossProfitMargin"][data-x=3]').not(this).not('[data-x=2]').val(grossProfitMargin.toString());
 	$('[type=tel][name="grossMarginPercent"][data-x=3]').not(this).not('[data-x=2]').val(grossMarginPercent.toString());
-
-	
 
 });	
 
