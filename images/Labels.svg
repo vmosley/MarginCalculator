@@ -24,15 +24,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3082566"
-     inkscape:cx="15.627978"
-     inkscape:cy="415.91748"
+     inkscape:zoom="1.8501542"
+     inkscape:cx="2.3264559"
+     inkscape:cy="312.0111"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1195"
      inkscape:window-height="679"
-     inkscape:window-x="25"
+     inkscape:window-x="26"
      inkscape:window-y="25"
      inkscape:window-maximized="0" />
   <metadata
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -214,88 +214,102 @@
          y="547.10962">General and Admin</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
-       x="57.328201"
-       y="277.06073"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="47.391312"
+       y="587.62158"
        id="text3105"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\payrollBurden.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3107"
-         x="57.328201"
-         y="277.06073">Payroll Burden</tspan></text>
+         x="47.391312"
+         y="587.62158">Payroll Burden</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
-       x="84.081367"
-       y="304.57825"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="45.862564"
+       y="605.96655"
        id="text3109"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\FicaFutaSuta.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3111"
-         x="84.081367"
-         y="304.57825">FICA, FUTA,SUTA</tspan></text>
+         x="45.862564"
+         y="605.96655">FICA, FUTA,SUTA</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
-       x="87.903244"
-       y="316.80829"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="72.615723"
+       y="622.01849"
        id="text3113"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\fica.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3115"
-         x="87.903244"
-         y="316.80829">FICA</tspan></text>
+         x="72.615723"
+         y="622.01849">FICA</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
-       x="90.196373"
-       y="327.50955"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="72.615723"
+       y="638.07037"
        id="text3117"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\futa.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3119"
-         x="90.196373"
-         y="327.50955">FUTA</tspan></text>
+         x="72.615723"
+         y="638.07037">FUTA</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
-       x="90.960747"
-       y="342.79706"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="72.615715"
+       y="651.06476"
        id="text3121"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\suta.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3123"
-         x="90.960747"
-         y="342.79706">SUTA</tspan></text>
+         x="72.615715"
+         y="651.06476">SUTA</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
-       x="92.489502"
-       y="351.96957"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="70.322601"
+       y="664.05914"
        id="text3125"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\sui.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3127"
-         x="92.489502"
-         y="351.96957">SUI</tspan></text>
+         x="70.322601"
+         y="664.05914">SUI</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
-       x="92.489502"
-       y="360.37772"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="72.615723"
+       y="683.16852"
        id="text3129"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\workersComp.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3131"
-         x="92.489502"
-         y="360.37772">Workers Comp</tspan></text>
+         x="72.615723"
+         y="683.16852">Workers Comp</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
@@ -303,7 +317,10 @@
        y="394.01025"
        id="text3133"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       transform="translate(0,308.2677)"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\generalAndAdmin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3135"
          x="97.07576"
@@ -315,7 +332,10 @@
        y="407.00464"
        id="text3137"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       transform="translate(0,308.2677)"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\fundingAndServices.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3139"
          x="117.71391"
@@ -327,7 +347,10 @@
        y="424.5853"
        id="text3141"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       transform="translate(0,308.2677)"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\badDebtAccural.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3143"
          x="129.17955"
@@ -339,10 +362,44 @@
        y="439.10843"
        id="text3145"
        sodipodi:linespacing="125%"
-       transform="translate(0,308.2677)"><tspan
+       transform="translate(0,308.2677)"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\other.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan3147"
          x="156.69708"
          y="439.10843">Other</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="113.89203"
+       y="477.32724"
+       id="text3943"
+       sodipodi:linespacing="125%"
+       transform="translate(0,308.2677)"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\equals.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3945"
+         x="113.89203"
+         y="477.32724">=</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.33628319000000001;color:#000000;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.30000000999999998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="path3950"
+       sodipodi:cx="104.71952"
+       sodipodi:cy="465.09723"
+       sodipodi:rx="24.460033"
+       sodipodi:ry="24.460033"
+       d="m 128.56888,459.6657 a 24.460033,24.460033 0 1 1 -0.3636,-1.40311"
+       transform="matrix(0.31944054,0,0,0.31944054,84.215886,632.37055)"
+       sodipodi:start="6.0592613"
+       sodipodi:end="12.28318"
+       sodipodi:open="true"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\equals.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>

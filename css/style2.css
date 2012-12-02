@@ -10,16 +10,20 @@ p .Box
 	padding-top:7px;
 	padding-bottom:7px;
 	background-color:#C5D4D7;
-	font-size:41px;
+	font-size:28px;
 	border-radius:0px;
-/* 	-webkit-touch-callout: none;
+ 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select: none; */
+	user-select: none; 
 }
 
+#mainLogo{
+position:absolute;
+
+}
 .equals
 {
  background-image:url(../images/equals.png) 14px 22px;
@@ -38,7 +42,7 @@ form .curFocus
 {
 background-color:white;
 color:black;
-font-size:44px;
+font-size:29px;
 }
 
 p {

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator"
-    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    
     <!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
     <title>My Page</title>
     <!-- =====Meta ========-->
-    <!--=====STYLE/CSS======-->
+    
+	<!--=====STYLE/CSS======-->
     <!-- ******Find out how to include jquery themes-->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
     <!--<link rel="stylesheet" href="css/test2.css" />    -->
-    
-    <!--JQuery/JS=====-->
+    <link rel="stylesheet" href="css/style2.css" />
+	
+	<!--JQuery/JS=====-->
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-	
-	<link rel="stylesheet" href="css/style2.css" />
+    
   </head>
   <body>
   <!--===================================START OF PAGE ONE-->
@@ -43,6 +43,7 @@
         </form>
       </div>
       <!-- ...............................END OF INPUT/OUTPUTS-->
+	  <!--<img id="mainLogo" src="images/logo2.png"/>-->
       <!-- .............................START OF CALCULATOR BUTTONS-->
       <div class="right" data-role="content" data-theme="a">
         <div class="ui-grid-c">
@@ -56,7 +57,7 @@
             <button data-theme="b" id="key9" data-rockncoder-tag="9">9</button>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyDivide">/</button>
+            <button data-theme="e" id="keyAdd">+</button>
           </div>
           <div class="ui-block-a">
             <button data-theme="b" id="key4" data-rockncoder-tag="4">4</button>
@@ -68,7 +69,7 @@
             <button data-theme="b" id="key6" data-rockncoder-tag="6">6</button>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyMultiply">*</button>
+            <button data-theme="e" id="keySubtract">-</button>
           </div>
           <div class="ui-block-a">
             <button data-theme="b" id="key1" data-rockncoder-tag="1">1</button>
@@ -80,21 +81,33 @@
             <button data-theme="b" id="key3" data-rockncoder-tag="3">3</button>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keySubtract">-</button>
+            <button data-theme="e" id="keyMultiply">*</button>
           </div>
           <div class="ui-block-a">
-            <button data-theme="e" id="keyDecimalPoint" data-rockncoder-tag=".">.</button>
-          </div>
-          <div class="ui-block-b">
             <button data-theme="b" id="key0" data-rockncoder-tag="0">0</button>
           </div>
+          <div class="ui-block-b">
+            <button data-theme="b" id="keyDecimalPoint" data-rockncoder-tag=".">.</button>
+          </div>
           <div class="ui-block-c">
-            <button data-theme="e" id="keyEquals">=</button>
+            <button data-theme="b" id="keyEquals">=</button>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyAdd">+</button>
+            <button data-theme="e" id="keyDivide">/</button>
           </div>
         </div>
+        <div class="ui-grid-b my-breakpoint">
+          <div class="ui-block-a" style="width:50%;">
+            <button data-theme="a">Clear All</button>
+          </div>
+          <div class="ui-block-b" style="width:25%;">
+            <button data-theme="b">BKSP</button>
+          </div>
+          <div class="ui-block-c" style="width:25%;">
+            <button data-theme="e" id="keyEquals">=</button>
+          </div>
+        </div>
+        <!-- /grid-b -->
       </div>
       <!-- .............................END OF CALCULATOR BUTTONS-->
     </div>
@@ -107,7 +120,7 @@
   </div>
   <!--=============================================== END OF PAGE ONE -->
   <!--==============================================START OF PAGE TWO -->
-  <div data-role="page" id="PageTwo" data-theme="b" >
+  <div data-role="page" id="PageTwo" data-theme="b">
     <div data-role="header">Settings</div>
     <!-- /header -->
     <div data-role="content" data-theme="b">
