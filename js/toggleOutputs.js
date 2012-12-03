@@ -119,33 +119,54 @@ $('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 	
 	
 	/*DETERMINE WHERE VALUES ARE COMING FROM*/
-	if($('[name="billRate"]').attr('data-x') == '3')
+	if(dataBillRate == '3')
 	billRate          	= (markUp + payRate) + 1; 
 	else billRate          	= parseFloat( $("[name='billRate']").val().replace(/,/g, ''), 10);
 	
-	if($('[name="payRate"]').attr('data-x') == '3')
-	payRate           	= (billRate - markUp) + 1
+	if(dataPayRate == '3')
+	payRate           	= (billRate - markUp) + 1;
 	else payRate           	= parseFloat( $("[name='payRate']").val().replace(/,/g, ''), 10);
 	
-	if($('[name="markUp"]').attr('data-x') == '3')
+	if(dataMarkUp == '3')
 	markUp            	= (billRate - payRate) - 1; 
 	else markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10); 
     
-	if($('[name="grossProfitMargin"]').attr('data-x') == '3')
+	if(dataGrossProfitMargin == '3')
 	grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
     else grossProfitMargin 	= parseFloat($("[name='grossProfitMargin']").val().replace(/,/g, ''), 10);
 	
-	if($('[name="grossMarginPercent"]').attr('data-x') == '3')
+	if(dataGrossMarginPercent == '3')
 	grossMarginPercent	= (grossProfitMargin / billRate);
 	else grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
+	
 	
 	console.log('billrate equals 3?' , $('[name="billRate"]').attr('data-x') == '3');
 	/*
 	 A = parseFloat($("input:text[name='AA']").val(),10);  //for refference
 	*/
 	
-
- 
+	/*DETERMINE WHERE VALUES ARE COMING FROM ROUND TWO*/
+	if(dataBillRate != '3' && dataPayRate != '3')
+	{}
+	else if(dataBillRate != '3' && dataMarkUp != '3')
+	{}
+	else if(dataBillRate != '3' && dataGrossProfitMargin != '3')
+	{}
+	else if(dataBillRate != '3' && dataGrossMarginPercent != '3')
+	{}
+	else if(dataPayRate != '3' && dataMarkUp != '3')
+	{}
+	else if(dataPayRate != '3' && dataGrossProfitMargin != '3')
+	{}
+	else if(dataPayRate != '3' && dataGrossMarginPercent != '3')
+	{}
+	else if(dataMarkUp != '3' && dataGrossProfitMargin != '3')
+	{}
+	else if(dataMarkUp != '3' && dataGrossMarginPercent != '3')
+	{}
+	else if(dataGrossProfitMargin != '3' && dataGrossMarginPercent != '3')
+	{}
+	else
 	
 	
 	//Sends calculated values to text outputs when data-x=3
