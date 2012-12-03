@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 	
 /* Clear swiped Input plus all calculated Inputs */
-$('[type=tel]').bind('swipeleft',function(){
+$('[type="tel"]').bind('swipeleft',function(){
 	$('[type=tel][data-x="3"]').stop().animate({'padding-right':250},'fast');
 	//$('[type=tel][data-x="3"]').animate({color:'white'},250);
 	$(this).stop().animate({'padding-right':250},'fast',function(){
@@ -49,7 +49,10 @@ $("[type=tel]").blur(function() {
 	});	
 	
 // NEW CODE***************************************************************
-$('[type=tel]').bind(' keydown ',function(){
+
+//$("#HomeButton").click
+
+$('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 	
 	//var count = 0;
 	//count++;
@@ -107,35 +110,36 @@ $('[type=tel]').bind(' keydown ',function(){
 	
 	
 	/* SETTINGS VALUES SHOULD ALWAYS GO FIRST, WILL ALWAYS BE AVAILIBLE*/
-	workersComp			= parseFloat($("[name='workersComp']").val());
-	ficaAndFutaTax      = parseFloat($("[name='ficaAndFutaTax']").val());
-	sui                 = parseFloat($("[name='sui']").val());
-	other               = parseFloat($("[name='other']").val());
-	fundingAndProcessing= parseFloat($("[name='fundingAndProcessing']").val());
-	misc                = parseFloat($("[name='misc']").val());
+	workersComp			= parseFloat($("[name='workersComp']").val().replace(/,/g, ''), 10);
+	ficaAndFutaTax      = parseFloat($("[name='ficaAndFutaTax']").val().replace(/,/g, ''), 10);
+	sui                 = parseFloat($("[name='sui']").val().replace(/,/g, ''), 10);
+	other               = parseFloat($("[name='other']").val().replace(/,/g, ''), 10);
+	fundingAndProcessing= parseFloat($("[name='fundingAndProcessing']").val().replace(/,/g, ''), 10);
+	misc                = parseFloat($("[name='misc']").val().replace(/,/g, ''), 10);
 	
 	
 	/*DETERMINE WHERE VALUES ARE COMING FROM*/
-	if(false)
+	if($('[name="billRate"]').attr('data-x') == '3')
 	billRate          	= (markUp + payRate) + 1; 
-	else billRate          	= parseFloat($("[name='billRate']").val()); 
+	else billRate          	= parseFloat( $("[name='billRate']").val().replace(/,/g, ''), 10);
 	
-	if(false)
+	if($('[name="payRate"]').attr('data-x') == '3')
 	payRate           	= (billRate - markUp) + 1
-	else payRate           	= parseFloat($("[name='payRate']").val());
+	else payRate           	= parseFloat( $("[name='payRate']").val().replace(/,/g, ''), 10);
 	
-	if(true)
+	if($('[name="markUp"]').attr('data-x') == '3')
 	markUp            	= (billRate - payRate) - 1; 
-	else markUp            	= parseFloat($("[name='markUp']").val()); 
+	else markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10); 
     
-	if(true)
+	if($('[name="grossProfitMargin"]').attr('data-x') == '3')
 	grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
-    else grossProfitMargin 	= parseFloat($("[name='grossProfitMargin']").val());
+    else grossProfitMargin 	= parseFloat($("[name='grossProfitMargin']").val().replace(/,/g, ''), 10);
 	
-	if(true)
+	if($('[name="grossMarginPercent"]').attr('data-x') == '3')
 	grossMarginPercent	= (grossProfitMargin / billRate);
-	else grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val());
+	else grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
 	
+	console.log('billrate equals 3?' , $('[name="billRate"]').attr('data-x') == '3');
 	/*
 	 A = parseFloat($("input:text[name='AA']").val(),10);  //for refference
 	*/
@@ -145,11 +149,11 @@ $('[type=tel]').bind(' keydown ',function(){
 	
 	
 	//Sends calculated values to text outputs when data-x=3
-	$('[type=tel][name="billRate"][data-x=3]').not(this).not('[data-x=2]').val(billRate.toString());
-	$('[type=tel][name="payRate"][data-x=3]').not(this).not('[data-x=2]').val(payRate.toString());
-	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString());
-	$('[type=tel][name="grossProfitMargin"][data-x=3]').not(this).not('[data-x=2]').val(grossProfitMargin.toString());
-	$('[type=tel][name="grossMarginPercent"][data-x=3]').not(this).not('[data-x=2]').val(grossMarginPercent.toString());
+	$('[type=tel][name="billRate"][data-x=3]').not(this).not('[data-x=2]').val('$' + billRate.toString());
+	$('[type=tel][name="payRate"][data-x=3]').not(this).not('[data-x=2]').val('$' + payRate.toString());
+	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString() +'%');
+	$('[type=tel][name="grossProfitMargin"][data-x=3]').not(this).not('[data-x=2]').val('$'+ grossProfitMargin.toString());
+	$('[type=tel][name="grossMarginPercent"][data-x=3]').not(this).not('[data-x=2]').val(grossMarginPercent.toFixed(2).toString()+'%');
 
 });	
 

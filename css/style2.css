@@ -24,9 +24,13 @@ p .Box
 position:absolute;
 
 }
-.equals
+
+
+.left
 {
- background-image: ,url(../images/equals.png);
+ background-image: url(../images/damianlogo3.png);
+ background-repeat: no-repeat;
+ background-position: 17px 316px;
 }
 /*  14px 22px */
 /* partial code for horizontal rotation not working yet */

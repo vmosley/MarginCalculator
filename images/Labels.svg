@@ -415,5 +415,36 @@
          id="tspan4254"
          x="159.98666"
          y="781.03345">FICA &amp; FUTA Tax</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
+       x="158.90567"
+       y="507.35745"
+       id="text4764"
+       sodipodi:linespacing="125%"
+       transform="translate(0,308.2677)"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\FundingAndProcessing.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan4766"
+         x="158.90567"
+         y="507.35745"
+         style="stroke:#fcfcfc;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none">Funding &amp; Processing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:13px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#fcfcfc;font-family:Sans;-inkscape-font-specification:Sans Bold;stroke-opacity:1;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none"
+       x="116.74703"
+       y="541.94916"
+       id="text4768"
+       sodipodi:linespacing="125%"
+       transform="translate(0,308.2677)"
+       inkscape:export-filename="C:\Inbox\_ProjectDamian\_GitMarginCalculator\images\misc.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan4770"
+         x="116.74703"
+         y="541.94916">Misc.</tspan></text>
   </g>
 </svg>
