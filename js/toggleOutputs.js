@@ -147,26 +147,66 @@ $('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 	
 	/*DETERMINE WHERE VALUES ARE COMING FROM ROUND TWO*/
 	if(dataBillRate != '3' && dataPayRate != '3')
-	{}
+		{
+		markUp = (billRate - payRate) - 1; 
+		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		grossMarginPercent	= (grossProfitMargin / billRate);
+		}
 	else if(dataBillRate != '3' && dataMarkUp != '3')
-	{}
+		{
+		payRate           	= (billRate - markUp) + 1;
+		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		grossMarginPercent	= (grossProfitMargin / billRate);
+		}
 	else if(dataBillRate != '3' && dataGrossProfitMargin != '3')
-	{}
+		{
+		payRate           	= (billRate - markUp) + 1; 
+		markUp = (billRate - payRate) - 1; 
+		grossMarginPercent	= (grossProfitMargin / billRate);
+		}
 	else if(dataBillRate != '3' && dataGrossMarginPercent != '3')
-	{}
+		{
+		payRate           	= (billRate - markUp) + 1; 
+		markUp = (billRate - payRate) - 1; 
+		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		}
 	else if(dataPayRate != '3' && dataMarkUp != '3')
-	{}
+		{
+		billRate          	= (markUp + payRate) + 1; 
+		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		grossMarginPercent	= (grossProfitMargin / billRate);
+		}
 	else if(dataPayRate != '3' && dataGrossProfitMargin != '3')
-	{}
+		{
+		billRate          	= (markUp + payRate) + 1;
+		markUp = (billRate - payRate) - 1; /* get one of these values another way*/
+		grossMarginPercent	= (grossProfitMargin / billRate);
+		}
 	else if(dataPayRate != '3' && dataGrossMarginPercent != '3')
-	{}
+		{
+		billRate          	= (markUp + payRate) + 1;
+		markUp = (billRate - payRate) - 1;
+		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		}
 	else if(dataMarkUp != '3' && dataGrossProfitMargin != '3')
-	{}
+		{
+		billRate          	= (markUp + payRate) + 1;
+		payRate           	= (billRate - markUp) + 1; 
+		grossMarginPercent	= (grossProfitMargin / billRate);
+		}
 	else if(dataMarkUp != '3' && dataGrossMarginPercent != '3')
-	{}
+		{
+		billRate          	= (markUp + payRate) + 1;
+		payRate           	= (billRate - markUp) + 1;
+		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		}
 	else if(dataGrossProfitMargin != '3' && dataGrossMarginPercent != '3')
-	{}
-	else
+		{
+		billRate          	= (markUp + payRate) + 1; 
+		payRate           	= (billRate - markUp) + 1; 
+		markUp = (billRate - payRate) - 1; 
+		}
+	
 	
 	
 	//Sends calculated values to text outputs when data-x=3
