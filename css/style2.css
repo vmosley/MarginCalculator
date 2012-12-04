@@ -24,6 +24,16 @@ p .Box
 position:absolute;
 
 }
+/*
+
+.ui-focus,
+.ui-btn:focus {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none ;
+}
+*/
+
 
 
 .left
@@ -47,6 +57,12 @@ form .curFocus
 background-color:white;
 color:black;
 font-size:29px;
+}
+
+form .red
+{
+background-color:pink;
+
 }
 
 p {

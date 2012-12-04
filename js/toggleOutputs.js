@@ -44,11 +44,11 @@ $('[type="tel"]').bind('swipeleft',function(){
 });
 
 
-$("[type=tel]").focus(function() {
+$("[type='tel']").focus(function() {
 		$(this).addClass("curFocus");
 	});
 	
-$("[type=tel]").blur(function() {
+$("[type='tel']").blur(function() {
 		$(this).removeClass("curFocus");
 	});	
 	
@@ -56,7 +56,9 @@ $("[type=tel]").blur(function() {
 
 //$("#HomeButton").click
 
-$('[type=tel],#HomeButton').bind('keydown keyup change',function(){
+
+
+$('[type=tel],#HomeButton').bind('keydown keyup ',function(){
 	
 	//var count = 0;
 	//count++;
@@ -262,13 +264,44 @@ $('[type=tel],#HomeButton').bind('keydown keyup change',function(){
 		}
 	
 	
-	//Sends calculated values to text outputs when data-x=3
-	$('[type=tel][name="billRate"][data-x=3]').not(this).not('[data-x=2]').val('$' + billRate.toString());
-	$('[type=tel][name="payRate"][data-x=3]').not(this).not('[data-x=2]').val('$' + payRate.toString());
-	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString());
-	$('[type=tel][name="grossProfitMargin"][data-x=3]').not(this).not('[data-x=2]').val('$'+ grossProfitMargin.toString());
-	$('[type=tel][name="grossMarginPercent"][data-x=3]').not(this).not('[data-x=2]').val(grossMarginPercent.toFixed(2).toString());
+	
 
+	
+	 console.log("billRate :", billRate);
+		
+	//Sends calculated values to text outputs when data-x=3
+	if(isNaN(billRate.toString()))
+		$('[type="tel"][name="billRate"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		else {
+			$('[type="tel"][name="billRate"][data-x="3"]').not(this).not('[data-x="2"]').val('$' + billRate.toString());
+			$('[name="billRate"]').removeClass('red');
+			}
+	
+	if(isNaN(payRate.toString()))
+		$('[type="tel"][name="payRate"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		else {
+			$('[type="tel"][name="payRate"][data-x="3"]').not(this).not('[data-x="2"]').val('$' + payRate.toString()).removeClass('red');
+			$('[name="payRate"]').removeClass('red');
+			}
+	
+	if(isNaN(markUp.toString()))
+		$('[type="tel"][name="markUp"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		else {
+			$('[type="tel"][name="markUp"][data-x="3"]').not(this).not('[data-x="2"]').val(markUp.toString());
+			$('[name="markUp"]').removeClass('red');
+			}
+	if(isNaN(grossProfitMargin.toString()))
+		$('[type="tel"][name="grossProfitMargin"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		else {
+			$('[type="tel"][name="grossProfitMargin"][data-x="3"]').not(this).not('[data-x="2"]').val('$'+ grossProfitMargin.toString());
+			$('[name="grossProfitMargin"]').removeClass('red');
+			}
+	if(isNaN(grossMarginPercent.toString()))
+		$('[type="tel"][name="grossMarginPercent"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		else {
+			$('[type="tel"][name="grossMarginPercent"][data-x="3"]').not(this).not('[data-x="2"]').val(grossMarginPercent.toFixed(2).toString());
+			$('[name="grossMarginPercent"]').removeClass('red');
+			}
 });	
 
 
