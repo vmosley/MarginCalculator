@@ -21,6 +21,14 @@ $(document).ready(function() {
 	$("[name='grossMarginPercent']").css('background-image', grossMarginPercentPic +','+ nothingPic).setCaretPosition(12);
 });	
 
+$('#clearAll').click(function(){
+	$('[data-x="3"],[data-x="2"],[data-x="1"]').stop().animate({'padding-right':250},'fast',function(){
+		$(this).css({'padding-right':10});
+		$(this).val('');
+		});
+
+});
+
 	
 /* Clear swiped Input plus all calculated Inputs */
 $('[type="tel"]').bind('swipeleft',function(){
