@@ -119,6 +119,7 @@ $('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 	
 	
 	/*DETERMINE WHERE VALUES ARE COMING FROM*/
+	/*
 	if(dataBillRate == '3')
 	billRate          	= (markUp + payRate) + 1; 
 	else billRate          	= parseFloat( $("[name='billRate']").val().replace(/,/g, ''), 10);
@@ -138,75 +139,122 @@ $('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 	if(dataGrossMarginPercent == '3')
 	grossMarginPercent	= (grossProfitMargin / billRate);
 	else grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
+	*/
 	
-	
-	console.log('billrate equals 3?' , $('[name="billRate"]').attr('data-x') == '3');
+	//console.log('billrate equals 3?' , $('[name="billRate"]').attr('data-x') == '3');
 	/*
 	 A = parseFloat($("input:text[name='AA']").val(),10);  //for refference
 	*/
+	/*
+	billRate = profitMargin + payRate+ workersComp + ficaAndFutaTax + sui + other +fundingAndProcessing + misc;
+	
+	payRate   = billRate - grossProfitMargin -workersComp - ficaAndFutaTax - sui - other -fundingAndProcessing - misc;
+	*/
+	
 	
 	/*DETERMINE WHERE VALUES ARE COMING FROM ROUND TWO*/
 	if(dataBillRate != '3' && dataPayRate != '3')
 		{
-		markUp = (billRate - payRate) - 1; 
-		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		billRate          	= parseFloat( $("[name='billRate']").val().replace(/,/g, ''), 10);
+		payRate           	= parseFloat( $("[name='payRate']").val().replace(/,/g, ''), 10);
+		//done
+		markUp              = (billRate - payRate) - 1; 
+		grossProfitMargin   = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		grossMarginPercent	= (grossProfitMargin / billRate);
 		}
 	else if(dataBillRate != '3' && dataMarkUp != '3')
 		{
-		payRate           	= (billRate - markUp) + 1;
-		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		billRate          	= parseFloat( $("[name='billRate']").val().replace(/,/g, ''), 10);
+		markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10);
+		//done
+		payRate           	= (billRate - markUp) - 1;
+		grossProfitMargin   = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		grossMarginPercent	= (grossProfitMargin / billRate);
 		}
 	else if(dataBillRate != '3' && dataGrossProfitMargin != '3')
 		{
-		payRate           	= (billRate - markUp) + 1; 
-		markUp = (billRate - payRate) - 1; 
-		grossMarginPercent	= (grossProfitMargin / billRate);
+		billRate          	= parseFloat( $("[name='billRate']").val().replace(/,/g, ''), 10);
+		grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		//done
+		//payRate           	= (billRate - markUp) + 1; //where to get markup
+		payRate   = billRate - grossProfitMargin -workersComp - ficaAndFutaTax - sui - other -fundingAndProcessing - misc;
+		markUp              = (billRate - payRate) - 1; //
+		grossMarginPercent	= (grossProfitMargin / billRate); //ok
 		}
 	else if(dataBillRate != '3' && dataGrossMarginPercent != '3')
 		{
-		payRate           	= (billRate - markUp) + 1; 
-		markUp = (billRate - payRate) - 1; 
-		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		billRate          	= parseFloat( $("[name='billRate']").val().replace(/,/g, ''), 10);
+		grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
+		//done
+		//payRate             = (billRate - markUp) + 1; 
+		payRate   = billRate - grossProfitMargin -workersComp - ficaAndFutaTax - sui - other -fundingAndProcessing - misc;
+		markUp              = (billRate - payRate) - 1; 
+		grossProfitMargin   = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		}
 	else if(dataPayRate != '3' && dataMarkUp != '3')
 		{
+		payRate           	= parseFloat( $("[name='payRate']").val().replace(/,/g, ''), 10);
+		markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10);
+		//done
 		billRate          	= (markUp + payRate) + 1; 
-		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		grossProfitMargin   = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		grossMarginPercent	= (grossProfitMargin / billRate);
 		}
 	else if(dataPayRate != '3' && dataGrossProfitMargin != '3')
 		{
-		billRate          	= (markUp + payRate) + 1;
-		markUp = (billRate - payRate) - 1; /* get one of these values another way*/
+		payRate           	= parseFloat( $("[name='payRate']").val().replace(/,/g, ''), 10);
+		grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		//done
+		//billRate          	= (markUp + payRate) + 1;
+		billRate = profitMargin + payRate+ workersComp + ficaAndFutaTax + sui + other +fundingAndProcessing + misc;
+		markUp              = (billRate - payRate) - 1; 
 		grossMarginPercent	= (grossProfitMargin / billRate);
 		}
 	else if(dataPayRate != '3' && dataGrossMarginPercent != '3')
 		{
-		billRate          	= (markUp + payRate) + 1;
-		markUp = (billRate - payRate) - 1;
-		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		payRate           	= parseFloat( $("[name='payRate']").val().replace(/,/g, ''), 10);
+		grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
+		//done
+		//billRate          	= (markUp + payRate) + 1;
+		billRate = profitMargin + payRate+ workersComp + ficaAndFutaTax + sui + other +fundingAndProcessing + misc;
+		markUp              = (billRate - payRate) - 1;
+		grossProfitMargin   = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		}
 	else if(dataMarkUp != '3' && dataGrossProfitMargin != '3')
 		{
+		markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10);
+		grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		//senerio has not enough info
 		billRate          	= (markUp + payRate) + 1;
-		payRate           	= (billRate - markUp) + 1; 
+		payRate           	= (billRate - markUp) - 1; 
 		grossMarginPercent	= (grossProfitMargin / billRate);
 		}
 	else if(dataMarkUp != '3' && dataGrossMarginPercent != '3')
 		{
+		markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10);
+		grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
+		//senerio has not enough info
 		billRate          	= (markUp + payRate) + 1;
-		payRate           	= (billRate - markUp) + 1;
-		grossProfitMargin = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		payRate           	= (billRate - markUp) - 1;
+		grossProfitMargin   = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		}
 	else if(dataGrossProfitMargin != '3' && dataGrossMarginPercent != '3')
 		{
-		billRate          	= (markUp + payRate) + 1; 
-		payRate           	= (billRate - markUp) + 1; 
-		markUp = (billRate - payRate) - 1; 
+		grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
+		//done if payRate formula is right
+		billRate          	= grossMarginPercent / grossProfitMargin; //line done
+		payRate   = billRate - grossProfitMargin -workersComp - ficaAndFutaTax - sui - other -fundingAndProcessing - misc;
+		markUp              = (billRate - payRate) - 1; 
 		}
+	else {//this senerio should not happen
+		billRate = "";
+		payRate = "";
+		markUp ="";
+		grossProfitMargin = "";
+		dataGrossMarginPercent = "";
 	
+		}
 	
 	
 	//Sends calculated values to text outputs when data-x=3
