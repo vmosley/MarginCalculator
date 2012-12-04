@@ -14,11 +14,11 @@
 	var grossProfitMarginPic='url(\"./images/grossProfitMargin.png\")';
 	var grossMarginPercentPic='url(\"./images/grossMarginPercent.png\")';	
 $(document).ready(function() {
-  	$("[name='billRate']").css('background-image', billRatePic +','+ nothingPic);
-	$("[name='payRate']").css('background-image', payRatePic +','+ nothingPic);
-	$("[name='markUp']").css('background-image', markUpPic +','+ nothingPic);
-	$("[name='grossProfitMargin']").css('background-image', grossProfitMarginPic +','+ nothingPic);
-	$("[name='grossMarginPercent']").css('background-image', grossMarginPercentPic +','+ nothingPic);
+  	$("[name='billRate']").css('background-image', billRatePic +','+ nothingPic).setCaretPosition(12);
+	$("[name='payRate']").css('background-image', payRatePic +','+ nothingPic).setCaretPosition(12);
+	$("[name='markUp']").css('background-image', markUpPic +','+ nothingPic).setCaretPosition(12);
+	$("[name='grossProfitMargin']").css('background-image', grossProfitMarginPic +','+ nothingPic).setCaretPosition(12);
+	$("[name='grossMarginPercent']").css('background-image', grossMarginPercentPic +','+ nothingPic).setCaretPosition(12);
 });	
 
 	
@@ -42,17 +42,13 @@ $("[type=tel]").focus(function() {
 	
 $("[type=tel]").blur(function() {
 		$(this).removeClass("curFocus");
-	});
-	
-$("[type=tel]").blur(function() {
-		$(this).removeClass("curFocus");
 	});	
 	
 // NEW CODE***************************************************************
 
 //$("#HomeButton").click
 
-$('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
+$('[type=tel],#HomeButton').bind('keydown keyup change',function(){
 	
 	//var count = 0;
 	//count++;
@@ -206,7 +202,7 @@ $('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 		grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		//done
 		//billRate          	= (markUp + payRate) + 1;
-		billRate = profitMargin + payRate+ workersComp + ficaAndFutaTax + sui + other +fundingAndProcessing + misc;
+		billRate			= grossProfitMargin + payRate+ workersComp + ficaAndFutaTax + sui + other +fundingAndProcessing + misc;
 		markUp              = (billRate - payRate) - 1; 
 		grossMarginPercent	= (grossProfitMargin / billRate);
 		}
@@ -225,18 +221,19 @@ $('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 		markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10);
 		grossProfitMargin 	= billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
 		//senerio has not enough info
-		billRate          	= (markUp + payRate) + 1;
+		/*billRate          	= (markUp + payRate) + 1;
 		payRate           	= (billRate - markUp) - 1; 
-		grossMarginPercent	= (grossProfitMargin / billRate);
+		grossMarginPercent	= (grossProfitMargin / billRate);*/
 		}
 	else if(dataMarkUp != '3' && dataGrossMarginPercent != '3')
 		{
 		markUp            	= parseFloat($("[name='markUp']").val().replace(/,/g, ''), 10);
 		grossMarginPercent	= parseFloat($("[name='grossMarginPercent']").val().replace(/,/g, ''), 10);
 		//senerio has not enough info
-		billRate          	= (markUp + payRate) + 1;
+		/*billRate          	= (markUp + payRate) + 1;
 		payRate           	= (billRate - markUp) - 1;
 		grossProfitMargin   = billRate-(payRate+(workersComp + ficaAndFutaTax + sui + other) + (fundingAndProcessing + misc));
+		*/
 		}
 	else if(dataGrossProfitMargin != '3' && dataGrossMarginPercent != '3')
 		{
@@ -260,9 +257,9 @@ $('[type=tel],#HomeButton').bind('keydown keyup click change',function(){
 	//Sends calculated values to text outputs when data-x=3
 	$('[type=tel][name="billRate"][data-x=3]').not(this).not('[data-x=2]').val('$' + billRate.toString());
 	$('[type=tel][name="payRate"][data-x=3]').not(this).not('[data-x=2]').val('$' + payRate.toString());
-	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString() +'%');
+	$('[type=tel][name="markUp"][data-x=3]').not(this).not('[data-x=2]').val(markUp.toString());
 	$('[type=tel][name="grossProfitMargin"][data-x=3]').not(this).not('[data-x=2]').val('$'+ grossProfitMargin.toString());
-	$('[type=tel][name="grossMarginPercent"][data-x=3]').not(this).not('[data-x=2]').val(grossMarginPercent.toFixed(2).toString()+'%');
+	$('[type=tel][name="grossMarginPercent"][data-x=3]').not(this).not('[data-x=2]').val(grossMarginPercent.toFixed(2).toString());
 
 });	
 
