@@ -23,7 +23,7 @@
   <!--===================================START OF PAGE ONE-->
   <div data-theme="b" data-role="page" id="PageOne">
     <div data-role="header">Damian Calculator</div>
-    <div data-role="content">
+	<div data-role="content" data-theme="a">
       <!-- .................................START OF INPUT/OUTPUTS-->
       <div class="left" data-role="content" data-theme="a">
         <form>
@@ -50,46 +50,46 @@
       <div class="right" data-role="content" data-theme="a">
         <div class="ui-grid-c">
           <div class="ui-block-a">
-            <button data-theme="b" id="key7" data-rockncoder-tag="7">7</button>
+            <button data-theme="b" id="key7" data-Digit="7">P</button>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key8" data-rockncoder-tag="8">8</button>
+            <button data-theme="b" id="key8" data-Digit="8">8</button>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key9" data-rockncoder-tag="9">9</button>
+            <button data-theme="b" id="key9" data-Digit="9">9</button>
           </div>
           <div class="ui-block-d">
             <button data-theme="e" id="keyAdd">+</button>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key4" data-rockncoder-tag="4">4</button>
+            <button data-theme="b" id="key4" data-Digit="4">4</button>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key5" data-rockncoder-tag="5">5</button>
+            <button data-theme="b" id="key5" data-Digit="5">5</button>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key6" data-rockncoder-tag="6">6</button>
+            <button data-theme="b" id="key6" data-Digit="6">6</button>
           </div>
           <div class="ui-block-d">
             <button data-theme="e" id="keySubtract">-</button>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key1" data-rockncoder-tag="1">1</button>
+            <button data-theme="b" id="key1" data-Digit="1">1</button>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key2" data-rockncoder-tag="2">2</button>
+            <button data-theme="b" id="key2" data-Digit="2">2</button>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key3" data-rockncoder-tag="3">3</button>
+            <button data-theme="b" id="key3" data-Digit="3">3</button>
           </div>
           <div class="ui-block-d">
             <button data-theme="e" id="keyMultiply">*</button>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key0" data-rockncoder-tag="0">0</button>
+            <button data-theme="b" id="key0" data-Digit="0">0</button>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="keyDecimalPoint" data-rockncoder-tag=".">.</button>
+            <button data-theme="b" id="keyDecimalPoint" data-Digit=".">.</button>
           </div>
           <div class="ui-block-c">
             <button data-theme="b" id="keyEquals">=</button>
@@ -112,44 +112,119 @@
         <!-- /grid-b -->
       </div>
       <!-- .............................END OF CALCULATOR BUTTONS-->
+		<div data-role="footer">
+		  <h4>
+			<a data-role="button" href="#PageTwo" data-theme="a">Settings</a>
+		  </h4>
+		</div><!--footer-->
     </div>
     <!--=====================END OF CONTENT-->
-    <div data-role="footer">
-      <h4>
-        <a data-role="button" href="#PageTwo" data-theme="a">Settings</a>
-      </h4>
-    </div>
   </div>
   <!--=============================================== END OF PAGE ONE -->
   <!--==============================================START OF PAGE TWO -->
   <div data-role="page" id="PageTwo" data-theme="b">
     <div data-role="header">Settings</div>
     <!-- /header -->
-    <div data-role="content" data-theme="b">
+    <div data-role="content" data-theme="a">
       <form name="set">
-        <p>
-        <label>Workers Comp %:</label> 
-        <input class="Box" id="workersComp" type="tel" name="workersComp" /></p>
-        <p>
-        <label>FICA &amp; FutaTax %</label> 
-        <input class="Box" id="ficaAndFuta" type="tel" name="ficaAndFutaTax" /></p>
-        <p>
-        <label>SUI %</label> 
-        <input class="Box" id="sui" type="tel" name="sui" /></p>
-        <p>
-        <label>Other %</label> 
-        <input class="Box" id="other" type="tel" name="other" /></p>
-        <p>
-        <label>Funding &amp; Processing %</label> 
-        <input class="Box" id="fundingAndProcessing" type="tel" name="fundingAndProcessing" /></p>
-        <p>
-        <label>Misc %</label> 
-        <input class="Box" id="misc" type="tel" name="misc" /></p>
-        <p>
-       </form>
-      <p>
-        <a id="HomeButton" href="#PageOne" data-role="button" data-theme="b">Home</a>
-      </p>
+        <div data-role="content" data-theme="b">
+			<h1>Payroll Burden</h1>
+			<p>
+			<label>Workers Comp %:</label> 
+			<input class="Box" id="workersComp" type="tel" name="workersComp" /></p>
+			<p>
+			<label>FICA &amp; FutaTax %</label> 
+			<input class="Box" id="ficaAndFuta" type="tel" name="ficaAndFutaTax" /></p>
+			<p>
+			<label>SUI %</label> 
+			<input class="Box" id="sui" type="tel" name="sui" /></p>
+			<p>
+			<label>Other %</label> 
+			<input class="Box" id="other" type="tel" name="other" /></p>
+		</div><!--End of Payroll Burden -->
+		<div data-role="content" data-theme="b">
+			<h1>Billing Costs</h1>
+			<p>
+			<label>Funding &amp; Processing %</label> 
+			<input class="Box" id="fundingAndProcessing" type="tel" name="fundingAndProcessing" /></p>
+			<p>
+			<label>Misc %</label> 
+			<input class="Box" id="misc" type="tel" name="misc" /></p>
+			<p>
+		</div><!--End of Billing Costs-->		
+      <!-- .............................START OF CALCULATOR BUTTONS-->
+      <div class="right" data-role="content" data-theme="a">
+        <div class="ui-grid-c">
+          <div class="ui-block-a">
+            <button data-theme="b" id="key7B" data-Digit="7">7</button>
+          </div>
+          <div class="ui-block-b">
+            <button data-theme="b" id="key8B" data-Digit="8">8</button>
+          </div>
+          <div class="ui-block-c">
+            <button data-theme="b" id="key9B" data-Digit="9">9</button>
+          </div>
+          <div class="ui-block-d">
+            <button data-theme="e" id="keyAddB">+</button>
+          </div>
+          <div class="ui-block-a">
+            <button data-theme="b" id="key4B" data-Digit="4">4</button>
+          </div>
+          <div class="ui-block-b">
+            <button data-theme="b" id="key5B" data-Digit="5">5</button>
+          </div>
+          <div class="ui-block-c">
+            <button data-theme="b" id="key6B" data-Digit="6">6</button>
+          </div>
+          <div class="ui-block-d">
+            <button data-theme="e" id="keySubtractB">-</button>
+          </div>
+          <div class="ui-block-a">
+            <button data-theme="b" id="key1B" data-Digit="1">1</button>
+          </div>
+          <div class="ui-block-b">
+            <button data-theme="b" id="key2B" data-Digit="2">2</button>
+          </div>
+          <div class="ui-block-c">
+            <button data-theme="b" id="key3B" data-Digit="3">3</button>
+          </div>
+          <div class="ui-block-d">
+            <button data-theme="e" id="keyMultiplyB">*</button>
+          </div>
+          <div class="ui-block-a">
+            <button data-theme="b" id="key0B" data-Digit="0">0</button>
+          </div>
+          <div class="ui-block-b">
+            <button data-theme="b" id="keyDecimalPoint" data-Digit=".B">.</button>
+          </div>
+          <div class="ui-block-c">
+            <button data-theme="b" id="keyEqualsB">=</button>
+          </div>
+          <div class="ui-block-d">
+            <button data-theme="e" id="keyDivideB">/</button>
+          </div>
+        </div>
+        <div class="ui-grid-b">
+          <div id="clearAll" class="ui-block-a" style="width:50%;">
+            <button data-theme="a">Clear All</button>
+          </div>
+          <div class="ui-block-b" style="width:25%;">
+            <button data-theme="b">BKSP</button>
+          </div>
+          <div class="ui-block-c" style="width:25%;">
+            <button data-theme="e" id="keyEqualsB">=</button>
+          </div>
+        </div>
+        <!-- /grid-b -->
+      </div>
+      <!-- .............................END OF CALCULATOR BUTTONS-->       
+	   <div data-role="footer">
+			<h4>
+				<a id="HomeButton" href="#PageOne" data-role="button" data-theme="a">Home</a>
+			</h4>
+		</div><!--footer-->
+	  </form>
+     
     </div>
   </div>
   <!--=============================================== END OF PAGE TWO -->
@@ -158,7 +233,7 @@
   <script src="js/jquery.caret.js"></script> 
   <script src="js/toggleOutputs.js"></script> 
   <script src="js/numFormat.js"></script> 
-  <script src="js/RockCalcApp.js"></script> 
+  <script src="js/myCalc.js"></script> 
   
   <!--<script src="js/jquery.caret.1.02.min.js"></script> -->
   <!--============ END OF JQUERY FILES--></body>

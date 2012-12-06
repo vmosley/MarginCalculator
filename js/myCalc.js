@@ -1,65 +1,20 @@
-//[type=tel] can replace [type=tel]
-//	$('input[type=text]:not([data-x=1])')
-//$("[type=tel][data-x='3']").each(function() { do something } );    //just for reference
-//when padding is 100 clear and reset padding
-//$("input[name=AA]").addClass("selected");
 
-/**************INITAL STYLING******************************/
-	var nothingPic='url(\"./images/nothing.png\")';
-	var equalsPic= 'url(\"./images/equals.png\")';
-	
-	var billRatePic='url(\"./images/billRate.png\")';
-	var payRatePic='url(\"./images/payRate.png\")';
-	var markUpPic='url(\"./images/markUpPercent.png\")';
-	var grossProfitMarginPic='url(\"./images/grossProfitMargin.png\")';
-	var grossMarginPercentPic='url(\"./images/grossMarginPercent.png\")';	
-$(document).ready(function() {
-  	$("[name='billRate']").css('background-image', billRatePic +','+ nothingPic).setCaretPosition(12);
-	$("[name='payRate']").css('background-image', payRatePic +','+ nothingPic).setCaretPosition(12);
-	$("[name='markUp']").css('background-image', markUpPic +','+ nothingPic).setCaretPosition(12);
-	$("[name='grossProfitMargin']").css('background-image', grossProfitMarginPic +','+ nothingPic).setCaretPosition(12);
-	$("[name='grossMarginPercent']").css('background-image', grossMarginPercentPic +','+ nothingPic).setCaretPosition(12);
-	
-	
+var currentInput = $('#billRate')[0];
 
-//CLEAR ALL BUTTON
-$('#clearAll').click(function(){
-	$('[data-x="3"],[data-x="2"],[data-x="1"]').stop().animate({'padding-right':250},'fast',function(){
-		$(this).css({'padding-right':10});
-		$(this).val('');
-		});
-
+$('input[type=tel]').focus(function () {
+    currentInput = this;
 });
 
-//SWIPE DELETE	
-/* Clear swiped Input plus all calculated Inputs */
-$('[type="tel"]').bind('swipeleft',function(){
-	$('[type=tel][data-x="3"]').stop().animate({'padding-right':250},'fast');
-	//$('[type=tel][data-x="3"]').animate({color:'white'},250);
-	$(this).stop().animate({'padding-right':250},'fast',function(){
-		$(this).css({'padding-right':10});
-		$('[type=tel][data-x="3"]').css({'padding-right':10});
+//TODO: ON-SCREEN BUTTONS CODE (NEEDED WHEN data-x="1")
+$('[data-Digit]').bind('click',function(){
+
+		newDigit = this.textContent;
+		currentInput.value += newDigit;
+
 		
-		$(this).val('');
-		$('[type=tel][data-x="3"]').val('');
-	});
-});
+		//trying something
+		
 
-//SETS UP FOR PROPER HIGHLIGHTING
-$("[type='tel']").focus(function() {
-		$(this).addClass("curFocus");
-	});
-	
-$("[type='tel']").blur(function() {
-		$(this).removeClass("curFocus");
-	});	
-	
-
-
-
-
-// NEW CODE***************************************************************
-$('[type=tel],#HomeButton').bind('keydown keyup ',function(){
 	
 	//var count = 0;
 	//count++;
@@ -78,6 +33,7 @@ $('[type=tel],#HomeButton').bind('keydown keyup ',function(){
 	
 	
 	
+	//$('[data-x="1"]').val(currentInput.value);
 	//code for adding equals background pic for when data=3
 	//var payRatePic= $("[name='payRate']").css('background-image');
 	
@@ -266,19 +222,3 @@ $('[type=tel],#HomeButton').bind('keydown keyup ',function(){
 });	
 
 
-});	
-	
-	
-	
-	
-/* //function grabbed from web to remove NaN
-function recalc() {
-  jQuery("input[class^=percent]").calc("(invoice - cost)/invoice * 100", {
-    invoice: jQuery("input[class^=invoice]"),
-    cost: jQuery("input[class^=cost]")
-  },
-  function(s) {
-    // return an empty string if s is NaN
-    return !isNaN(s) ? s.toFixed(2) + "%" : "";
-  });
-} */
