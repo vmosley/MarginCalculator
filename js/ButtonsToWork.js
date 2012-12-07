@@ -1,57 +1,56 @@
-//CLEAR ALL BUTTON B
-$('#clearAllB').click(function(){
-	$('[type="tel"]').not('[data-x="3"],[data-x="2"],[data-x="1"]').stop().animate({'padding-right':250},'fast',function(){
-		$(this).css({'padding-right':10});
-		$(this).val('');
-		});
+//[type=tel] can replace [type=tel]
+//	$('input[type=text]:not([data-x=1])')
+//$("[type=tel][data-x='3']").each(function() { do something } );    //just for reference
+//when padding is 100 clear and reset padding
+//$("input[name=AA]").addClass("selected");
 
-});
-
-$('[data-DigitB]').bind('click',function(){
-
-		newDigit = this.textContent;
-		currentInput.value += newDigit;
-});
-
-//var currentInput = $('#billRate')[0];
-
-$('input[type=tel]').focus(function () {
-    currentInput = this;
-});
-
-//TODO: ON-SCREEN BUTTONS CODE (NEEDED WHEN data-x="1")
-$('[data-Digit]').bind('click',function(){
-
-		newDigit = this.textContent;
-		currentInput.value += newDigit;
-
-		
-		//trying something
-		
+/**************INITAL STYLING******************************/
+$(document).ready(function() {
+	
+	var nothingPic='url(\"./images/nothing.png\")';
+	var equalsPic= 'url(\"./images/equals.png\")';
+	
+	var billRatePic='url(\"./images/billRate.png\")';
+	var payRatePic='url(\"./images/payRate.png\")';
+	var markUpPic='url(\"./images/markUpPercent.png\")';
+	var grossProfitMarginPic='url(\"./images/grossProfitMargin.png\")';
+	var grossMarginPercentPic='url(\"./images/grossMarginPercent.png\")';	
+	
+	var billRate          = "";
+	var payRate           = "";
+	var markUp            = "";
+  	var grossProfitMargin = "";
+	var grossMarginPercent= "";
+	
+  	$("[name='billRate']").css('background-image', billRatePic +','+ nothingPic).setCaretPosition(12);
+	$("[name='payRate']").css('background-image', payRatePic +','+ nothingPic).setCaretPosition(12);
+	$("[name='markUp']").css('background-image', markUpPic +','+ nothingPic).setCaretPosition(12);
+	$("[name='grossProfitMargin']").css('background-image', grossProfitMarginPic +','+ nothingPic).setCaretPosition(12);
+	$("[name='grossMarginPercent']").css('background-image', grossMarginPercentPic +','+ nothingPic).setCaretPosition(12);
 
 	
-	//var count = 0;
-	//count++;
-	 
- 	/* DETERMINE WHAT TYPE OF INPUT/OUTPUT Get type of output/input, 1,2 or 3 (real)*/
-	dataCurrent = $(this).attr('data-x');
-	
+	function addDigit(myThis)
+	{
+	var newDigit = myThis.text();
+	$(".curFocus").val($(".curFocus").val() + newDigit);
+	}
+
+	function determineInOrOut()
+	{
+	/* DETERMINE WHAT TYPE OF INPUT/OUTPUT 1,2 or 3*/
+	var dataCurrent = $(".curFocus").attr('data-x');
 	if (dataCurrent == '3'){  
-		$(this).attr('data-x','1');
-		$('[type=tel][data-x="2"]').not(this).attr('data-x','3');
-		$('[type=tel][data-x="1"]').not(this).attr('data-x','2');
+		$(".curFocus").attr('data-x','1');
+		$('[type=tel][data-x="2"]').not($(".curFocus")).attr('data-x','3');
+		$('[type=tel][data-x="1"]').not($(".curFocus")).attr('data-x','2');
 	}else if (dataCurrent == '2'){
-		$(this).attr('data-x','1');
-		$('[type=tel][data-x="1"]').not(this).attr('data-x','2');
-	}else{/*Add error checking for version 2, with a data-x counter. if != default then reset*/}
+		$($(".curFocus")).attr('data-x','1');
+		$('[type=tel][data-x="1"]').not($(".curFocus")).attr('data-x','2');
+	}else{/*Add error checking for version 2, with a data-x counter.if != default then reset*/}	
+	}	
 	
-	
-	
-	//$('[data-x="1"]').val(currentInput.value);
-	//code for adding equals background pic for when data=3
-	//var payRatePic= $("[name='payRate']").css('background-image');
-	
-		
+	function styleInOrOut()
+	{
 	/***********************************OUTPUT STYLING********************************/
 	
 	/*COLOR OFTEXT DEPENDS ON IF GENERATED-OUTPUT OR USER-INPUT*/
@@ -70,8 +69,10 @@ $('[data-Digit]').bind('click',function(){
 	$("[name='markUp']").not("[data-x='3']").css('background-image', markUpPic+','+nothingPic);
 	$("[name='grossProfitMargin']").not("[data-x='3']").css('background-image', grossProfitMarginPic +','+nothingPic);
 	$("[name='grossMarginPercent']").not("[data-x='3']").css('background-image', grossMarginPercentPic +','+nothingPic);
-	
-		
+	}
+
+	function CalculateForSenerios()
+	{
 	/*****************************OUTPUT CALCULATIONS**********************************/
 	/*GETS TYPE OF OUTPUT 1,2 OR 3*/
 	dataBillRate = $("[type=tel][name='billRate']").attr('data-x');
@@ -193,46 +194,175 @@ $('[data-Digit]').bind('click',function(){
 		markUp ="";
 		grossProfitMargin = "";
 		dataGrossMarginPercent = "";
-	
 		}
+	}
 	
-	
-	 //console.log("billRate :", billRate);
-		
-	/*SENDS CALCULATED VALUES TO TEXT OUTPUTS WHEN data-x=3 */
+	function DisplayCalcsHideNaN()
+	{
 	/*If NaN, HIGHLIGHT RED AND DONT DISPLAY NaN*/
+	/*SENDS CALCULATED VALUES TO TEXT OUTPUTS WHEN data-x=3 */
 	if(isNaN(billRate.toString()))
-		$('[type="tel"][name="billRate"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		$('[type="tel"][name="billRate"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val("").removeClass('red').addClass('red')
 		else {
-			$('[type="tel"][name="billRate"][data-x="3"]').not(this).not('[data-x="2"]').val('$' + billRate.toString());
+			$('[type="tel"][name="billRate"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val('$' + billRate.toString());
 			$('[name="billRate"]').removeClass('red');
 			}
 	
 	if(isNaN(payRate.toString()))
-		$('[type="tel"][name="payRate"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		$('[type="tel"][name="payRate"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val("").removeClass('red').addClass('red')
 		else {
-			$('[type="tel"][name="payRate"][data-x="3"]').not(this).not('[data-x="2"]').val('$' + payRate.toString()).removeClass('red');
+			$('[type="tel"][name="payRate"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val('$' + payRate.toString()).removeClass('red');
 			$('[name="payRate"]').removeClass('red');
 			}
 	
 	if(isNaN(markUp.toString()))
-		$('[type="tel"][name="markUp"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		$('[type="tel"][name="markUp"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val("").removeClass('red').addClass('red')
 		else {
-			$('[type="tel"][name="markUp"][data-x="3"]').not(this).not('[data-x="2"]').val(markUp.toString());
+			$('[type="tel"][name="markUp"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val(markUp.toString());
 			$('[name="markUp"]').removeClass('red');
 			}
 	if(isNaN(grossProfitMargin.toString()))
-		$('[type="tel"][name="grossProfitMargin"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		$('[type="tel"][name="grossProfitMargin"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val("").removeClass('red').addClass('red')
 		else {
-			$('[type="tel"][name="grossProfitMargin"][data-x="3"]').not(this).not('[data-x="2"]').val('$'+ grossProfitMargin.toString());
+			$('[type="tel"][name="grossProfitMargin"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val('$'+ grossProfitMargin.toString());
 			$('[name="grossProfitMargin"]').removeClass('red');
 			}
 	if(isNaN(grossMarginPercent.toString()))
-		$('[type="tel"][name="grossMarginPercent"][data-x="3"]').not(this).not('[data-x="2"]').val("").removeClass('red').addClass('red')
+		$('[type="tel"][name="grossMarginPercent"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val("").removeClass('red').addClass('red')
 		else {
-			$('[type="tel"][name="grossMarginPercent"][data-x="3"]').not(this).not('[data-x="2"]').val(grossMarginPercent.toFixed(2).toString());
+			$('[type="tel"][name="grossMarginPercent"][data-x="3"]').not(".curFocus").not('[data-x="2"]').val(grossMarginPercent.toFixed(2).toString());
 			$('[name="grossMarginPercent"]').removeClass('red');
 			}
-});	
+	}
+		
+	function addComma(event, Boxes){
+		  // skip for arrow keys
+		  if(event.which >= 37 && event.which <= 40){
+			  event.preventDefault();
+		  }
+		  var $this = Boxes;
+		  var num = $this.val().replace(/,/g,'');
+		  // the following line has been simplified. Revision history contains original.
+		  $this.val(num.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
+	} 
+		
+		
+	//CLEAR ALL BUTTON
+	$('#clearAll').toggle(function(){
+			//alert("hi");
+			tempBillRate=           $("[name='billRate']").val();
+			tempPayRate=            $("[name='payRate']").val();
+			tempMarkUp=             $("[name='markUp']").val();
+			tempGrossProfitMargin=  $("[name='grossProfitMargin']").val();
+			tempGrossMArginPercent= $("[name='grossMarginPercent']").val();
+			$('[data-x="3"],[data-x="2"],[data-x="1"]').stop().animate({'padding-right':250},'fast',function(){
+			$(this).css({'padding-right':10});
+			$(this).val('');
+			$('#clearAll').text("UNDO");
+			});
+			
 
+	},function(){
+		$("[name='billRate']").val(tempBillRate);	        
+		$("[name='payRate']").val(tempPayRate);	          
+		$("[name='markUp']").val(tempMarkUp);	          
+		$("[name='grossProfitMargin']").val(tempGrossProfitMargin);	
+		$("[name='grossMarginPercent']").val(tempGrossMArginPercent);
+		$('#clearAll').text("Clear All");
+
+	});
+
+
+	//SWIPE DELETE	
+	/* Clear swiped Input plus all calculated Inputs */
+	$('[type="tel"]').bind('swipeleft',function(){
+		$('[type=tel][data-x="3"]').stop().animate({'padding-right':250},'fast');
+		//$('[type=tel][data-x="3"]').animate({color:'white'},250);
+		$(this).stop().animate({'padding-right':250},'fast',function(){
+			$(this).css({'padding-right':10});
+			$('[type=tel][data-x="3"]').css({'padding-right':10});
+			
+			$(this).val('');
+			$('[type=tel][data-x="3"]').val('');
+		});
+	});
+
+	//SETS UP FOR PROPER HIGHLIGHTING
+	$(".BoxA,.BSET").focus(function() {
+			$(".BoxA, .BSET").removeClass("curFocus");
+			$(this).addClass("curFocus");
+			
+			focusedVal = $(this).val();
+			
+	});
+		
+
+	$('[data-Digit]').bind('click', function(event){
+		
+		addDigit($(this));	
+		
+		determineInOrOut();
+		
+		styleInOrOut();
+		
+		CalculateForSenerios();
+
+		DisplayCalcsHideNaN();	
+		
+		addComma(event,$('[name="billRate"]'));
+		addComma(event,$('[name="payRate"]'));
+		addComma(event,$('[name="markUp"]'));
+		addComma(event,$('[name="grossProfitMargin"]'));
+		addComma(event,$('[name="grossMarginPercent"]'));
+		
+	});	
+	
+	$('#HomeButton').bind('click', function(event){
+				
+		CalculateForSenerios();
+		
+		//styleInOrOut();
+		DisplayCalcsHideNaN();	
+		
+		addComma(event,$('[name="billRate"]'));
+		addComma(event,$('[name="payRate"]'));
+		addComma(event,$('[name="markUp"]'));
+		addComma(event,$('[name="grossProfitMargin"]'));
+		addComma(event,$('[name="grossMarginPercent"]'));
+		
+	});
+	
+	$('[data-DigitB]').bind('click', function(event){
+		
+		addDigit($(this));	
+		
+		addComma(event,$('[name="workersComp"]'));
+		addComma(event,$('[name="ficaAndFutaTax"]'));
+		addComma(event,$('[name="sui"]'));
+		addComma(event,$('[name="other"]'));
+		addComma(event,$('[name="fundingAndProcessing"]'));
+		addComma(event,$('[name="misc"]'));
+		
+	});
+
+$('[type="tel"]').bind('keydown', function(){
+	
+		
+	determineInOrOut();
+	
+	styleInOrOut();
+	
+	CalculateForSenerios();
+		
+	DisplayCalcsHideNaN();	
+		
+});
+
+	$('[data-DigitB]').bind('click',function(){
+
+			newDigit = this.textContent;
+			currentInput.value += newDigit;
+	});
+
+});
 

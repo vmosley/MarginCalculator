@@ -29,19 +29,19 @@
         <form>
           <p>
           <label>Bill Rate:</label> 
-          <input class="Box" id="billRate" type="tel" name="billRate" data-x="1" /></p>
+          <input class="BoxA" id="billRate" type="tel" name="billRate" data-x="1" autocomplete="off"/></p>
           <p>
           <label>Pay Rate:</label> 
-          <input class="Box" id="payRate" type="tel" name="payRate" data-x="2" /></p>
+          <input class="BoxA" id="payRate" type="tel" name="payRate" data-x="2" autocomplete="off"/></p>
           <p>
           <label>Mark Up:</label> 
-          <input class="Box" id="markUp" type="tel" name="markUp" data-x="3" /></p>
+          <input class="BoxA" id="markUp" type="tel" name="markUp" data-x="3" autocomplete="off"/></p>
           <p>
           <label>Gross Profit Margin:</label> 
-          <input class="Box" id="grossProfitMargin" type="tel" name="grossProfitMargin" data-x="3" /></p>
+          <input class="BoxA" id="grossProfitMargin" type="tel" name="grossProfitMargin" data-x="3" autocomplete="off"/></p>
           <p>
           <label>Gross Margin %:</label> 
-          <input class="Box" id="grossMarginPercent" type="tel" name="grossMarginPercent" data-x="3" /></p>
+          <input class="BoxA" id="grossMarginPercent" type="tel" name="grossMarginPercent" data-x="3" autocomplete="off"/></p>
         </form>
       </div>
       <!-- ...............................END OF INPUT/OUTPUTS-->
@@ -50,63 +50,64 @@
       <div class="right" data-role="content" data-theme="a">
         <div class="ui-grid-c">
           <div class="ui-block-a">
-            <button data-theme="b" id="key7" data-Digit="7">7</button>
+            <div data-role="button" data-theme="b" id="key7" data-Digit="7">7</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key8" data-Digit="8">8</button>
+            <div data-role="button" data-theme="b" id="key8" data-Digit="8">8</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key9" data-Digit="9">9</button>
+            <div data-role="button" data-theme="b" id="key9" data-Digit="9">9</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyAdd">+</button>
+            <div data-role="button" data-theme="e" id="keyAdd">+</div>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key4" data-Digit="4">4</button>
+            <div data-role="button" data-theme="b" id="key4" data-Digit="4">4</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key5" data-Digit="5">5</button>
+            <div data-role="button" data-theme="b" id="key5" data-Digit="5">5</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key6" data-Digit="6">6</button>
+            <div data-role="button" data-theme="b" id="key6" data-Digit="6">6</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keySubtract">-</button>
+            <div data-role="button" data-theme="e" id="keySubtract">-</div>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key1" data-Digit="1">1</button>
+            <div data-role="button" data-theme="b" id="key1" data-Digit="1">1</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key2" data-Digit="2">2</button>
+            <div data-role="button" data-theme="b" id="key2" data-Digit="2">2</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key3" data-Digit="3">3</button>
+            <div data-role="button" data-theme="b" id="key3" data-Digit="3">3</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyMultiply">*</button>
+            <div data-role="button" data-theme="e" id="keyMultiply">*</div>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key0" data-Digit="0">0</button>
+            <div data-role="button" data-theme="b" id="key0" data-Digit="0">0</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="keyDecimalPoint" data-Digit=".">.</button>
+            <div data-role="button" data-theme="b" id="keyDecimalPoint" data-Digit=".">.</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="keyEquals">=</button>
+            <div data-role="button" data-theme="b" id="keyEquals">=</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyDivide">/</button>
+            <div data-role="button" data-theme="e" id="keyDivide">/</div>
           </div>
         </div>
         <div class="ui-grid-b">
           <div id="clearAll" class="ui-block-a" style="width:50%;">
-            <button data-theme="a">Clear All</button>
+            <label for="ClearAll">ClearAll</label>
+			<a id="ClearAll" data-role="button" data-theme="a">Clear All</a><!--ClearALL /UNDO-->
           </div>
           <div class="ui-block-b" style="width:25%;">
-            <button data-theme="b">BKSP</button>
+            <div data-role="button" data-theme="b">BKSP</div>
           </div>
           <div class="ui-block-c" style="width:25%;">
-            <button data-theme="e" id="keyEquals">=</button>
+            <div data-role="button" data-theme="e" id="keyEquals">=</div>
           </div>
         </div>
         <!-- /grid-b -->
@@ -128,91 +129,91 @@
     <div data-role="content" data-theme="a">
       <form name="set">
         <div data-role="content" data-theme="b">
-			<h1>Payroll Burden</h1>
+			<h2>Payroll Burden</h2>
 			<p>
 			<label>Workers Comp %:</label> 
-			<input class="Box" id="workersComp" type="tel" name="workersComp" /></p>
+			<input class="Box BSET" id="workersComp" type="tel" name="workersComp" autocomplete="off"/></p>
 			<p>
 			<label>FICA &amp; FutaTax %</label> 
-			<input class="Box" id="ficaAndFuta" type="tel" name="ficaAndFutaTax" /></p>
+			<input class="Box BSET" id="ficaAndFuta" type="tel" name="ficaAndFutaTax" autocomplete="off"/></p>
 			<p>
 			<label>SUI %</label> 
-			<input class="Box" id="sui" type="tel" name="sui" /></p>
+			<input class="Box BSET" id="sui" type="tel" name="sui" autocomplete="off"/></p>
 			<p>
 			<label>Other %</label> 
-			<input class="Box" id="other" type="tel" name="other" /></p>
+			<input class="Box BSET" id="other" type="tel" name="other" autocomplete="off"/></p>
 		</div><!--End of Payroll Burden -->
 		<div data-role="content" data-theme="b">
-			<h1>Billing Costs</h1>
+			<h2>Billing Costs</h2>
 			<p>
 			<label>Funding &amp; Processing %</label> 
-			<input class="Box" id="fundingAndProcessing" type="tel" name="fundingAndProcessing" /></p>
+			<input class="Box BSET" id="fundingAndProcessing" type="tel" name="fundingAndProcessing" /></p>
 			<p>
 			<label>Misc %</label> 
-			<input class="Box" id="misc" type="tel" name="misc" /></p>
+			<input class="Box BSET" id="misc" type="tel" name="misc" /></p>
 			<p>
 		</div><!--End of Billing Costs-->		
-      <!-- .............................START OF CALCULATOR BUTTONS-->
+      <!-- .............................START OF CALCULATOR BUTTONS B -->
       <div class="right" data-role="content" data-theme="a">
         <div class="ui-grid-c">
           <div class="ui-block-a">
-            <button data-theme="b" id="key7B" data-Digit="7">7</button>
+            <div class="selected-input" data-role="button" data-theme="b" id="key7B" data-DigitB="7">7</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key8B" data-Digit="8">8</button>
+            <div  data-role="button"  data-theme="b" id="key8B" data-DigitB="8">8</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key9B" data-Digit="9">9</button>
+            <div data-role="button"  data-theme="b" id="key9B" data-DigitB="9">9</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyAddB">+</button>
+            <div data-role="button"  data-theme="e" id="keyAddB">+</div>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key4B" data-Digit="4">4</button>
+            <div data-role="button"  data-theme="b" id="key4B" data-DigitB="4">4</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key5B" data-Digit="5">5</button>
+            <div data-role="button"  data-theme="b" id="key5B" data-DigitB="5">5</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key6B" data-Digit="6">6</button>
+            <div data-role="button"  data-theme="b" id="key6B" data-DigitB="6">6</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keySubtractB">-</button>
+            <div data-role="button"  data-theme="e" id="keySubtractB">-</div>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key1B" data-Digit="1">1</button>
+            <div data-role="button"  data-theme="b" id="key1B" data-DigitB="1">1</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="key2B" data-Digit="2">2</button>
+            <div data-role="button"  data-theme="b" id="key2B" data-DigitB="2">2</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="key3B" data-Digit="3">3</button>
+            <div data-role="button"  data-theme="b" id="key3B" data-DigitB="3">3</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyMultiplyB">*</button>
+            <div data-role="button"  data-theme="e" id="keyMultiplyB">*</div>
           </div>
           <div class="ui-block-a">
-            <button data-theme="b" id="key0B" data-Digit="0">0</button>
+            <div data-role="button"  data-theme="b" id="key0B" data-DigitB="0">0</div>
           </div>
           <div class="ui-block-b">
-            <button data-theme="b" id="keyDecimalPoint" data-Digit=".B">.</button>
+            <div data-role="button"  data-theme="b" id="keyDecimalPointB" data-DigitB=".">.</div>
           </div>
           <div class="ui-block-c">
-            <button data-theme="b" id="keyEqualsB">=</button>
+            <div data-role="button"  data-theme="b" id="keyEqualsB">=</div>
           </div>
           <div class="ui-block-d">
-            <button data-theme="e" id="keyDivideB">/</button>
+            <div data-role="button"  data-theme="e" id="keyDivideB">/</div>
           </div>
         </div>
         <div class="ui-grid-b">
-          <div id="clearAll" class="ui-block-a" style="width:50%;">
-            <button data-theme="a">Clear All</button>
+          <div id="clearAllB" class="ui-block-a" style="width:50%;">
+            <div data-role="button"  data-theme="a">Clear All</div>
           </div>
           <div class="ui-block-b" style="width:25%;">
-            <button data-theme="b">BKSP</button>
+            <div data-role="button"  data-theme="b">BKSP</div>
           </div>
           <div class="ui-block-c" style="width:25%;">
-            <button data-theme="e" id="keyEqualsB">=</button>
+            <div data-role="button" data-theme="e" id="keyEqualsB">=</div>
           </div>
         </div>
         <!-- /grid-b -->
@@ -230,10 +231,11 @@
   <!--=============================================== END OF PAGE TWO -->
   <!--=================== JQUERY FILES-->
   <script src="js/jquery.js"></script> 
+  <script src="js/ButtonsToWork.js"></script> 
   <script src="js/jquery.caret.js"></script> 
-  <script src="js/toggleOutputs.js"></script> 
+  <!--<script src="js/toggleOutputs.js"></script> -->
   <script src="js/numFormat.js"></script> 
-  <script src="js/myCalc.js"></script> 
+  <!-- <script src="js/myCalc.js"></script> -->
   
   <!--<script src="js/jquery.caret.1.02.min.js"></script> -->
   <!--============ END OF JQUERY FILES--></body>
