@@ -249,26 +249,30 @@ $(document).ready(function() {
 		
 	//CLEAR ALL BUTTON
 	$('#clearAll').toggle(function(){
-			//alert("hi");
-			tempBillRate=           $("[name='billRate']").val();
-			tempPayRate=            $("[name='payRate']").val();
-			tempMarkUp=             $("[name='markUp']").val();
-			tempGrossProfitMargin=  $("[name='grossProfitMargin']").val();
-			tempGrossMArginPercent= $("[name='grossMarginPercent']").val();
-			$('[data-x="3"],[data-x="2"],[data-x="1"]').stop().animate({'padding-right':250},'fast',function(){
-			$(this).css({'padding-right':10});
-			$(this).val('');
-			$('#clearAll').text("UNDO");
-			});
+		//alert("hi");
+		tempBillRate=           $("[name='billRate']").val();
+		tempPayRate=            $("[name='payRate']").val();
+		tempMarkUp=             $("[name='markUp']").val();
+		tempGrossProfitMargin=  $("[name='grossProfitMargin']").val();
+		tempGrossMArginPercent= $("[name='grossMarginPercent']").val();
+		$('[data-x="3"],[data-x="2"],[data-x="1"]').stop().animate({'padding-right':250},'fast',function(){
+		$(this).css({'padding-right':10});
+		$(this).val('');
+		$('#clearAll * .ui-btn-text').text("UNDO");
+		//$('#clearAll * .ui-btn-text').css({"background-color":"red"});
+		var origColor = $('#clearAll .ui-btn-up-a').css("background");
+		$('#clearAll .ui-btn-up-a').css({"background": "linear-gradient(#BA4444, #FF0000)"});
+		});
 			
-
 	},function(){
 		$("[name='billRate']").val(tempBillRate);	        
 		$("[name='payRate']").val(tempPayRate);	          
 		$("[name='markUp']").val(tempMarkUp);	          
 		$("[name='grossProfitMargin']").val(tempGrossProfitMargin);	
 		$("[name='grossMarginPercent']").val(tempGrossMArginPercent);
-		$('#clearAll').text("Clear All");
+		$('#clearAll .ui-btn-text').text("Clear All");
+		$('#clearAll .ui-btn-up-a').css({"background": "linear-gradient(#444444, #2D2D2D)"});
+		
 
 	});
 
@@ -345,7 +349,7 @@ $(document).ready(function() {
 		
 	});
 
-$('[type="tel"]').bind('keydown', function(){
+$('[type="tel"]').bind('keyup', function(){
 	
 		
 	determineInOrOut();
