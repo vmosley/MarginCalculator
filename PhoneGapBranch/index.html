@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
     <!-- =====Meta ========-->
 
-    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
-    <title>My Page</title>
+    <!--
+      <script type="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></script><script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> latest version-->
+    <title>MARGIN CALCULATOR</title>
     
 	<!--=====STYLE/CSS======-->
     <!-- ******Find out how to include jquery themes-->
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
     <!--<link rel="stylesheet" href="css/test2.css" />    -->
-    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/style.css" />
 	
 	<!--JQuery/JS=====-->
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-    
-  </head>
-  <body>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.2.0.min.js"></script>
+	<!-- Uncomment following line to access PhoneGap APIs (not necessary to use PhoneGap to package web app) -->
+	<script src="cordova-2.2.0.js"></script>
+   	<script type="text/javascript" charset="utf-8">
+      
+        var onDeviceReady = function() {
+            document.getElementById("devready").innerHTML = "OnDeviceReady fired.";
+        };
+
+        function init() {
+            document.addEventListener("deviceready", onDeviceReady, true);
+        }   
+	</script>  
+  
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+	</head>
+	 <body>
   <!--===================================START OF PAGE ONE-->
   <div data-theme="b" data-role="page" id="PageOne">
     <div data-role="header">Damian Calculator</div>
@@ -29,19 +47,19 @@
         <form>
           <p>
           <label>Bill Rate:</label> 
-          <input class="BoxA" id="billRate" type="tel" name="billRate" data-x="1" autocomplete="off"/></p>
+          <input readonly  class="BoxA" id="billRate" type="tel" name="billRate" data-x="1" autocomplete="off"/></p>
           <p>
           <label>Pay Rate:</label> 
-          <input class="BoxA" id="payRate" type="tel" name="payRate" data-x="2" autocomplete="off"/></p>
+          <input readonly  class="BoxA" id="payRate" type="tel" name="payRate" data-x="2" autocomplete="off"/></p>
           <p>
           <label>Mark Up:</label> 
-          <input class="BoxA" id="markUp" type="tel" name="markUp" data-x="3" autocomplete="off"/></p>
+          <input readonly  class="BoxA" id="markUp" type="tel" name="markUp" data-x="3" autocomplete="off"/></p>
           <p>
           <label>Gross Profit Margin:</label> 
-          <input class="BoxA" id="grossProfitMargin" type="tel" name="grossProfitMargin" data-x="3" autocomplete="off"/></p>
+          <input readonly  class="BoxA" id="grossProfitMargin" type="tel" name="grossProfitMargin" data-x="3" autocomplete="off"/></p>
           <p>
           <label>Gross Margin %:</label> 
-          <input class="BoxA" id="grossMarginPercent" type="tel" name="grossMarginPercent" data-x="3" autocomplete="off"/></p>
+          <input readonly  class="BoxA" id="grossMarginPercent" type="tel" name="grossMarginPercent" data-x="3" autocomplete="off"/></p>
         </form>
       </div>
       <!-- ...............................END OF INPUT/OUTPUTS-->
@@ -132,25 +150,25 @@
 			<h2>Payroll Burden</h2>
 			<p>
 			<label>Workers Comp %:</label> 
-			<input class="Box BSET" id="workersComp" type="tel" name="workersComp" autocomplete="off"/></p>
+			<input readonly  class="Box BSET" id="workersComp" type="tel" name="workersComp" autocomplete="off"/></p>
 			<p>
 			<label>FICA &amp; FutaTax %</label> 
-			<input class="Box BSET" id="ficaAndFuta" type="tel" name="ficaAndFutaTax" autocomplete="off"/></p>
+			<input readonly  class="Box BSET" id="ficaAndFuta" type="tel" name="ficaAndFutaTax" autocomplete="off"/></p>
 			<p>
 			<label>SUI %</label> 
-			<input class="Box BSET" id="sui" type="tel" name="sui" autocomplete="off"/></p>
+			<input readonly  class="Box BSET" id="sui" type="tel" name="sui" autocomplete="off"/></p>
 			<p>
 			<label>Other %</label> 
-			<input class="Box BSET" id="other" type="tel" name="other" autocomplete="off"/></p>
+			<input readonly  class="Box BSET" id="other" type="tel" name="other" autocomplete="off"/></p>
 		</div><!--End of Payroll Burden -->
 		<div data-role="content" data-theme="b">
 			<h2>Billing Costs</h2>
 			<p>
 			<label>Funding &amp; Processing %</label> 
-			<input class="Box BSET" id="fundingAndProcessing" type="tel" name="fundingAndProcessing" /></p>
+			<input readonly  class="Box BSET" id="fundingAndProcessing" type="tel" name="fundingAndProcessing" /></p>
 			<p>
 			<label>Misc %</label> 
-			<input class="Box BSET" id="misc" type="tel" name="misc" /></p>
+			<input readonly  class="Box BSET" id="misc" type="tel" name="misc" /></p>
 			<p>
 		</div><!--End of Billing Costs-->		
       <!-- .............................START OF CALCULATOR BUTTONS B -->
@@ -232,7 +250,6 @@
   <!--=================== JQUERY FILES-->
   <script src="js/jquery.js"></script> 
   <script src="js/ButtonsToWork.js"></script> 
-  <script src="js/jquery.caret.js"></script> 
   <!--<script src="js/toggleOutputs.js"></script> -->
   <script src="js/numFormat.js"></script> 
   <!-- <script src="js/myCalc.js"></script> -->
